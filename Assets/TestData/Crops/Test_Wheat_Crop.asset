@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08f1a467e7124f7888fc916d6aabf5c0, type: 3}
+  m_Name: Test_Wheat_Crop
+  m_EditorClassIdentifier: Game.Runtime::Data.CropData
+  cropId: 
+  cropName: "\uBC00"
+  totalGrowthStage: 4
+  ticksPerStage: 3
+  stageSprites:
+  - {fileID: -3416764831734118652, guid: 8d850deab914f22408b8bb636fde184e, type: 3}
+  - {fileID: -424353319313006763, guid: 36569447229f6914ca87997a2157f4e9, type: 3}
+  - {fileID: 8432832155159901199, guid: d5d332dd28cc6e64c8f370ee4c3f29e0, type: 3}
+  - {fileID: -8242049793857664761, guid: 0900367b25f03e6448933eca9087eb4c, type: 3}
+  buyPrice: 10
+  sellPrice: 20
+  harvestItem: {fileID: 11400000, guid: 529548ecd7822a241ac8ee5b63e3e54d, type: 2}

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8c1bb1eeb5e244c5a7ed2d6167b103bf, type: 3}
+  m_Name: Test_Carrot_Item
+  m_EditorClassIdentifier: Game.Runtime::Data.ItemData
+  itemId: 
+  itemName: "\uB2F9\uADFC"
+  itemType: 0
+  maxStack: 99
+  buyPrice: 0
+  sellPrice: 10
+  icon: {fileID: 0}

@@ -1,0 +1,218 @@
+﻿.screen-root {
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    background-color: rgba(18, 20, 24, 0.94);
+}
+
+.top-bar {
+    height: 56px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.game-title {
+    font-size: 28px;
+    -unity-font-style: bold;
+    color: rgb(245, 247, 250);
+}
+
+.gold-label {
+    padding: 8px 16px;
+    border-radius: 14px;
+    background-color: rgb(42, 48, 58);
+    color: rgb(255, 214, 102);
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.main-layout {
+    flex-grow: 1;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.panel {
+    padding: 18px;
+    border-radius: 18px;
+    background-color: rgb(31, 35, 43);
+    border-width: 1px;
+    border-color: rgb(62, 70, 84);
+}
+
+.inventory-panel {
+    width: 46%;
+}
+
+.shop-panel {
+    flex-grow: 1;
+}
+
+.panel-header {
+    height: 42px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.panel-title {
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: rgb(240, 243, 247);
+}
+
+.icon-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background-color: rgb(52, 58, 70);
+    color: rgb(230, 234, 240);
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.icon-button:hover {
+    background-color: rgb(75, 84, 100);
+}
+
+.section-label {
+    margin-bottom: 10px;
+    color: rgb(170, 180, 194);
+    font-size: 14px;
+}
+
+.inventory-scroll {
+    flex-grow: 1;
+}
+
+.inventory-grid {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.inventory-slot {
+    width: 72px;
+    height: 72px;
+    border-radius: 14px;
+    background-color: rgb(42, 48, 58);
+    border-width: 1px;
+    border-color: rgb(70, 78, 92);
+}
+
+.inventory-slot:hover {
+    background-color: rgb(52, 60, 74);
+}
+
+.inventory-slot.selected {
+    border-width: 3px;
+    border-color: rgb(255, 203, 92);
+}
+
+.slot-icon {
+    width: 42px;
+    height: 42px;
+    align-self: center;
+    margin-top: 8px;
+}
+
+.slot-amount {
+    position: absolute;
+    right: 8px;
+    bottom: 5px;
+    color: white;
+    font-size: 13px;
+    -unity-font-style: bold;
+}
+
+.slot-empty-label {
+    align-self: center;
+    margin-top: 25px;
+    color: rgb(95, 105, 120);
+    font-size: 12px;
+}
+
+.help-text {
+    margin-top: 12px;
+    color: rgb(135, 145, 160);
+    font-size: 12px;
+}
+
+.shop-scroll {
+    flex-grow: 1;
+}
+
+.shop-list {
+    gap: 10px;
+}
+
+.shop-item-row {
+    height: 82px;
+    padding: 10px;
+    border-radius: 14px;
+    background-color: rgb(42, 48, 58);
+    border-width: 1px;
+    border-color: rgb(65, 72, 86);
+    flex-direction: row;
+    align-items: center;
+}
+
+.shop-item-row.locked {
+    opacity: 0.45;
+}
+
+.shop-icon {
+    width: 52px;
+    height: 52px;
+    margin-right: 12px;
+    border-radius: 10px;
+    background-color: rgb(30, 34, 42);
+}
+
+.shop-info {
+    flex-grow: 1;
+}
+
+.shop-item-name {
+    font-size: 16px;
+    -unity-font-style: bold;
+    color: rgb(240, 243, 247);
+}
+
+.shop-item-price {
+    margin-top: 4px;
+    font-size: 13px;
+    color: rgb(255, 214, 102);
+}
+
+.buy-button {
+    width: 86px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: rgb(83, 129, 255);
+    color: white;
+    -unity-font-style: bold;
+}
+
+.buy-button:hover {
+    background-color: rgb(105, 148, 255);
+}
+
+.buy-button:disabled {
+    background-color: rgb(70, 76, 88);
+    color: rgb(150, 156, 166);
+}
+
+.shop-message {
+    height: 28px;
+    margin-top: 12px;
+    color: rgb(255, 135, 135);
+    font-size: 13px;
+}
+
+.hidden {
+    display: none;
+}

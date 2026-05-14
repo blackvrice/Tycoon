@@ -1,0 +1,33 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/Scripts/UI/InventoryShop.uss?fileID=7433441132597879392&amp;guid=90fa2b1c77d344fbad1b74eebc36e4fe&amp;type=3#InventoryShop"/>
+    <ui:VisualElement name="Root" class="screen-root">
+        <ui:VisualElement class="top-bar">
+            <ui:Label text="Tycoon Farm" class="game-title"/>
+            <ui:Label name="GoldLabel" text="Gold: 0 G" class="gold-label"/>
+        </ui:VisualElement>
+        <ui:VisualElement class="main-layout">
+            <ui:VisualElement name="InventoryPanel" class="panel inventory-panel">
+                <ui:VisualElement class="panel-header">
+                    <ui:Label text="Inventory" class="panel-title"/>
+                    <ui:Button name="InventoryCloseButton" text="×" class="icon-button"/>
+                </ui:VisualElement>
+                <ui:Label text="보유 아이템" class="section-label"/>
+                <ui:ScrollView class="inventory-scroll">
+                    <ui:VisualElement name="InventoryGrid" class="inventory-grid"/>
+                </ui:ScrollView>
+                <ui:Label name="InventoryHelpLabel" text="슬롯을 클릭해서 선택하고, 다른 슬롯을 클릭하면 이동합니다." class="help-text"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="ShopPanel" class="panel shop-panel">
+                <ui:VisualElement class="panel-header">
+                    <ui:Label text="Shop" class="panel-title"/>
+                    <ui:Button name="ShopCloseButton" text="×" class="icon-button"/>
+                </ui:VisualElement>
+                <ui:Label text="구매 가능 아이템" class="section-label"/>
+                <ui:ScrollView class="shop-scroll">
+                    <ui:VisualElement name="ShopList" class="shop-list"/>
+                </ui:ScrollView>
+                <ui:Label name="ShopMessageLabel" text="" class="shop-message"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
