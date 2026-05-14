@@ -1,6 +1,6 @@
 {
     "name": "Game.Runtime",
-    "rootNamespace": "",
+    "rootNamespace": "Tycoon",
     "references": [
         "Unity.InputSystem",
         "Unity.TextMeshPro"

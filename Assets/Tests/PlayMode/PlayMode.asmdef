@@ -1,6 +1,6 @@
 {
     "name": "PlayMode",
-    "rootNamespace": "",
+    "rootNamespace": "Tycoon.Tests",
     "references": [
         "UnityEngine.TestRunner",
         "UnityEditor.TestRunner",
