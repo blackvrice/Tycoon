@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1bb1eeb5e244c5a7ed2d6167b103bf, type: 3}
   m_Name: Test_Carrot_Item
   m_EditorClassIdentifier: Game.Runtime::Data.ItemData
-  itemId: 
+  itemId: carrot
   itemName: "\uB2F9\uADFC"
-  itemType: 0
+  itemType: 2
   maxStack: 99
   buyPrice: 0
   sellPrice: 10

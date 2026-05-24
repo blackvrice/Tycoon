@@ -1,0 +1,63 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/SettingUI.uss?fileID=7433441132597879392&amp;guid=2c9e664c96e24780a7a0aaf63787c91e&amp;type=3#SettingUI"/>
+    <ui:VisualElement name="SettingRoot" class="setting-screen hidden">
+        <ui:VisualElement name="SettingWindow" class="setting-window">
+            <ui:VisualElement class="setting-header">
+                <ui:Label text="Settings" class="setting-title"/>
+                <ui:Button name="SettingCloseButton" text="X" class="setting-close-button"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="setting-section">
+                <ui:Label text="Audio" class="section-title"/>
+                <ui:VisualElement class="setting-row">
+                    <ui:Label text="Master" class="setting-label"/>
+                    <ui:Slider name="MasterVolumeSlider" low-value="0" high-value="100" value="80" class="setting-slider"/>
+                    <ui:Label name="MasterVolumeValueLabel" text="80%" class="setting-value"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="setting-row">
+                    <ui:Label text="Music" class="setting-label"/>
+                    <ui:Slider name="MusicVolumeSlider" low-value="0" high-value="100" value="70" class="setting-slider"/>
+                    <ui:Label name="MusicVolumeValueLabel" text="70%" class="setting-value"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="setting-row">
+                    <ui:Label text="SFX" class="setting-label"/>
+                    <ui:Slider name="SfxVolumeSlider" low-value="0" high-value="100" value="85" class="setting-slider"/>
+                    <ui:Label name="SfxVolumeValueLabel" text="85%" class="setting-value"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="setting-section">
+                <ui:Label text="Display" class="section-title"/>
+                <ui:VisualElement class="setting-row">
+                    <ui:Label text="Fullscreen" class="setting-label"/>
+                    <ui:Toggle name="FullscreenToggle" value="true" class="setting-toggle"/>
+                </ui:VisualElement>
+                <ui:VisualElement class="setting-row">
+                    <ui:Label text="VSync" class="setting-label"/>
+                    <ui:Toggle name="VSyncToggle" value="true" class="setting-toggle"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+            <ui:VisualElement class="setting-section">
+                <ui:Label text="Game" class="section-title"/>
+                <ui:VisualElement class="game-actions-row">
+                    <ui:Button name="SaveGameButton" text="Save" class="secondary-button"/>
+                    <ui:Button name="LoadGameButton" text="Load" class="secondary-button"/>
+                    <ui:Button name="NewGameButton" text="New Game" class="danger-button"/>
+                </ui:VisualElement>
+                <ui:Label name="SaveStatusLabel" text="" class="status-label"/>
+            </ui:VisualElement>
+            <ui:VisualElement class="setting-actions">
+                <ui:Button name="ResetSettingsButton" text="Reset" class="secondary-button"/>
+                <ui:Button name="ResumeButton" text="Resume" class="primary-button"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="NewGameConfirmDialog" class="confirm-dialog hidden">
+            <ui:VisualElement class="confirm-window">
+                <ui:Label text="Start a new game?" class="confirm-title"/>
+                <ui:Label text="Current progress and the save file will be reset." class="confirm-message"/>
+                <ui:VisualElement class="confirm-actions">
+                    <ui:Button name="CancelNewGameButton" text="Cancel" class="secondary-button"/>
+                    <ui:Button name="ConfirmNewGameButton" text="New Game" class="danger-button"/>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

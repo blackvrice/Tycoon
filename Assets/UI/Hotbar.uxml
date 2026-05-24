@@ -1,0 +1,52 @@
+﻿<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Hotbar.uss?fileID=7433441132597879392&amp;guid=ecea64c56e6a4c4e979ecdbbb2f2473d&amp;type=3#Hotbar"/>
+    <ui:VisualElement name="HotbarRoot" class="hotbar-root">
+        <ui:VisualElement name="Hotbar" class="hotbar">
+            <ui:VisualElement name="slot0" class="hotbar-slot">
+                <ui:Label text="1" class="hotbar-key"/>
+                <ui:VisualElement name="icon0" class="hotbar-icon"/>
+                <ui:Label name="amount0" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="slot1" class="hotbar-slot">
+                <ui:Label text="2" class="hotbar-key"/>
+                <ui:VisualElement name="icon1" class="hotbar-icon"/>
+                <ui:Label name="amount1" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="slot2" class="hotbar-slot">
+                <ui:Label text="3" class="hotbar-key"/>
+                <ui:VisualElement name="icon2" class="hotbar-icon"/>
+                <ui:Label name="amount2" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="slot3" class="hotbar-slot">
+                <ui:Label text="4" class="hotbar-key"/>
+                <ui:VisualElement name="icon3" class="hotbar-icon"/>
+                <ui:Label name="amount3" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="slot4" class="hotbar-slot">
+                <ui:Label text="5" class="hotbar-key"/>
+                <ui:VisualElement name="icon4" class="hotbar-icon"/>
+                <ui:Label name="amount4" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="slot5" class="hotbar-slot">
+                <ui:Label text="6" class="hotbar-key"/>
+                <ui:VisualElement name="icon5" class="hotbar-icon"/>
+                <ui:Label name="amount5" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="slot6" class="hotbar-slot">
+                <ui:Label text="7" class="hotbar-key"/>
+                <ui:VisualElement name="icon6" class="hotbar-icon"/>
+                <ui:Label name="amount6" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="slot7" class="hotbar-slot">
+                <ui:Label text="8" class="hotbar-key"/>
+                <ui:VisualElement name="icon7" class="hotbar-icon"/>
+                <ui:Label name="amount7" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="slot8" class="hotbar-slot">
+                <ui:Label text="9" class="hotbar-key"/>
+                <ui:VisualElement name="icon8" class="hotbar-icon"/>
+                <ui:Label name="amount8" text="" class="hotbar-amount"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

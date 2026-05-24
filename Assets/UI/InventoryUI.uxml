@@ -1,0 +1,51 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/InventoryUI.uss?fileID=7433441132597879392&amp;guid=9d2fcbdd1ac76f54f81913d44db65893&amp;type=3#InventoryUI"/>
+    <ui:VisualElement name="InventoryRoot" class="inventory-screen hidden">
+        <ui:VisualElement name="InventoryWindow" class="inventory-window">
+            <ui:VisualElement class="inventory-header">
+                <ui:Label text="Inventory" class="inventory-title"/>
+                <ui:Button name="InventoryCloseButton" text="X" class="inventory-close-button"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="InventoryGrid" class="inventory-grid">
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+                <ui:VisualElement class="inventory-slot"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="InventoryHotbarGrid" class="inventory-hotbar-grid">
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+                <ui:VisualElement class="inventory-slot hotbar-space"/>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

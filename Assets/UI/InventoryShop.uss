@@ -50,6 +50,11 @@
     flex-grow: 1;
 }
 
+.panel.expanded {
+    width: auto;
+    flex-grow: 1;
+}
+
 .panel-header {
     height: 42px;
     flex-direction: row;
@@ -112,6 +117,10 @@
     border-color: rgb(255, 203, 92);
 }
 
+.inventory-slot.drag-source {
+    opacity: 0.55;
+}
+
 .slot-icon {
     width: 42px;
     height: 42px;
@@ -139,6 +148,20 @@
     margin-top: 12px;
     color: rgb(135, 145, 160);
     font-size: 12px;
+}
+
+.selected-sale-row {
+    height: 42px;
+    margin-top: 12px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.selected-item-label {
+    flex-grow: 1;
+    color: rgb(210, 217, 226);
+    font-size: 13px;
 }
 
 .shop-scroll {
@@ -206,11 +229,42 @@
     color: rgb(150, 156, 166);
 }
 
+.shop-actions {
+    flex-direction: row;
+    gap: 8px;
+}
+
+.sell-button {
+    min-width: 86px;
+    height: 38px;
+    border-radius: 12px;
+    background-color: rgb(75, 165, 116);
+    color: white;
+    -unity-font-style: bold;
+}
+
+.sell-button:hover {
+    background-color: rgb(91, 188, 136);
+}
+
+.sell-button:disabled {
+    background-color: rgb(70, 76, 88);
+    color: rgb(150, 156, 166);
+}
+
 .shop-message {
     height: 28px;
     margin-top: 12px;
     color: rgb(255, 135, 135);
     font-size: 13px;
+}
+
+.drag-preview {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    opacity: 0.9;
+    -unity-background-scale-mode: scale-to-fit;
 }
 
 .hidden {

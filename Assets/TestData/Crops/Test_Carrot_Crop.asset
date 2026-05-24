@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f1a467e7124f7888fc916d6aabf5c0, type: 3}
   m_Name: Test_Carrot_Crop
   m_EditorClassIdentifier: Game.Runtime::Data.CropData
-  cropId: 
+  cropId: carrot
   cropName: "\uB2F9\uADFC"
   totalGrowthStage: 4
   ticksPerStage: 2

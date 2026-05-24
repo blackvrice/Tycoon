@@ -1,0 +1,190 @@
+.setting-screen {
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(18, 20, 24, 0.78);
+}
+
+.setting-window {
+    width: 520px;
+    padding: 18px;
+    border-radius: 18px;
+    background-color: rgb(31, 35, 43);
+    border-width: 1px;
+    border-color: rgb(62, 70, 84);
+}
+
+.setting-header {
+    height: 42px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 14px;
+}
+
+.setting-title {
+    font-size: 24px;
+    -unity-font-style: bold;
+    color: rgb(240, 243, 247);
+}
+
+.setting-close-button {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    background-color: rgb(52, 58, 70);
+    color: rgb(230, 234, 240);
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.setting-close-button:hover {
+    background-color: rgb(75, 84, 100);
+}
+
+.setting-section {
+    padding: 14px;
+    margin-bottom: 14px;
+    border-radius: 14px;
+    background-color: rgb(42, 48, 58);
+    border-width: 1px;
+    border-color: rgb(70, 78, 92);
+}
+
+.section-title {
+    margin-bottom: 12px;
+    color: rgb(170, 180, 194);
+    font-size: 14px;
+}
+
+.setting-row {
+    min-height: 42px;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.setting-label {
+    width: 108px;
+    color: rgb(240, 243, 247);
+    font-size: 15px;
+    -unity-font-style: bold;
+}
+
+.setting-slider {
+    flex-grow: 1;
+    margin-right: 12px;
+}
+
+.setting-value {
+    width: 48px;
+    color: rgb(255, 214, 102);
+    font-size: 14px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-right;
+}
+
+.setting-toggle {
+    flex-grow: 1;
+    color: rgb(230, 234, 240);
+}
+
+.setting-actions {
+    height: 42px;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.game-actions-row {
+    min-height: 42px;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.status-label {
+    min-height: 20px;
+    margin-top: 8px;
+    color: rgb(255, 214, 102);
+    font-size: 13px;
+}
+
+.primary-button,
+.secondary-button,
+.danger-button {
+    width: 108px;
+    height: 40px;
+    border-radius: 12px;
+    color: white;
+    -unity-font-style: bold;
+}
+
+.primary-button {
+    background-color: rgb(83, 129, 255);
+}
+
+.primary-button:hover {
+    background-color: rgb(105, 148, 255);
+}
+
+.secondary-button {
+    background-color: rgb(52, 58, 70);
+    color: rgb(230, 234, 240);
+}
+
+.secondary-button:hover {
+    background-color: rgb(75, 84, 100);
+}
+
+.danger-button {
+    background-color: rgb(174, 72, 72);
+}
+
+.danger-button:hover {
+    background-color: rgb(202, 88, 88);
+}
+
+.confirm-dialog {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(8, 10, 14, 0.58);
+}
+
+.confirm-window {
+    width: 360px;
+    padding: 18px;
+    border-radius: 14px;
+    background-color: rgb(36, 41, 50);
+    border-width: 1px;
+    border-color: rgb(86, 95, 112);
+}
+
+.confirm-title {
+    margin-bottom: 8px;
+    color: rgb(248, 250, 252);
+    font-size: 20px;
+    -unity-font-style: bold;
+}
+
+.confirm-message {
+    margin-bottom: 16px;
+    color: rgb(185, 195, 208);
+    font-size: 13px;
+}
+
+.confirm-actions {
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.hidden {
+    display: none;
+}
