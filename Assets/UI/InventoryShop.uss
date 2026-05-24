@@ -50,6 +50,11 @@
     flex-grow: 1;
 }
 
+.detail-panel {
+    width: 24%;
+    min-width: 210px;
+}
+
 .panel.expanded {
     width: auto;
     flex-grow: 1;
@@ -144,6 +149,14 @@
     font-size: 12px;
 }
 
+.item-icon-placeholder {
+    align-self: center;
+    margin-top: 18px;
+    color: rgb(170, 180, 194);
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
 .help-text {
     margin-top: 12px;
     color: rgb(135, 145, 160);
@@ -168,6 +181,41 @@
     flex-grow: 1;
 }
 
+.shop-control-row {
+    height: 36px;
+    margin-bottom: 10px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.quantity-caption {
+    width: 36px;
+    color: rgb(170, 180, 194);
+    font-size: 13px;
+}
+
+.quantity-button {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    background-color: rgb(52, 58, 70);
+    color: rgb(230, 234, 240);
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.quantity-button:hover {
+    background-color: rgb(75, 84, 100);
+}
+
+.quantity-label {
+    width: 44px;
+    -unity-text-align: middle-center;
+    color: rgb(245, 247, 250);
+    font-size: 15px;
+    -unity-font-style: bold;
+}
+
 .shop-list {
     gap: 10px;
 }
@@ -187,12 +235,19 @@
     opacity: 0.45;
 }
 
-.shop-icon {
+.shop-icon-frame {
     width: 52px;
     height: 52px;
     margin-right: 12px;
     border-radius: 10px;
     background-color: rgb(30, 34, 42);
+}
+
+.shop-icon {
+    width: 42px;
+    height: 42px;
+    align-self: center;
+    margin-top: 5px;
 }
 
 .shop-info {
@@ -257,6 +312,21 @@
     margin-top: 12px;
     color: rgb(255, 135, 135);
     font-size: 13px;
+}
+
+.detail-name {
+    margin-bottom: 10px;
+    color: rgb(240, 243, 247);
+    font-size: 18px;
+    -unity-font-style: bold;
+    white-space: normal;
+}
+
+.detail-line {
+    margin-bottom: 8px;
+    color: rgb(180, 190, 204);
+    font-size: 13px;
+    white-space: normal;
 }
 
 .drag-preview {

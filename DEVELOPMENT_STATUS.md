@@ -1,212 +1,383 @@
-# Tycoon 개발 현황 정리
+# Tycoon 개발 현황 및 다음 단계
 
-이 문서는 지금까지 구현된 내용과 다음 개발 우선순위를 빠르게 잡기 위한 작업 메모입니다.
+갱신일: 2026-05-25
+목적: 지금까지 만든 기능을 한눈에 확인하고, 다음 개발 우선순위를 잃지 않기 위한 작업 메모입니다.
 
-## 프로젝트 상태
+## 현재 한 줄 요약
 
-- Unity `6000.3.10f1` 기반 2D 프로젝트입니다.
-- 주요 패키지는 Input System, UI Toolkit, URP, 2D Tilemap/RuleTile, Test Framework를 사용합니다.
-- 현재 빌드 씬은 `Assets/Scenes/MainScene.unity`입니다.
-- 추가 씬으로 `Assets/Scenes/MarketplaceScene.unity`가 있습니다.
-- 런타임 프리팹으로 `GameSession`, `RuntimeInput`, `RuntimeUIRoot`가 준비되어 있습니다.
+농장 기본 플레이 루프는 코드상 연결되었고, 런타임 씬 자동 조립 도구와 PlayMode/EditMode 자동 QA까지 통과했습니다. 현재 기준으로는 에디터 메뉴 또는 명령줄로 Lobby/Farm/Marketplace/Main 씬을 재설치하고, 필수 런타임 오브젝트와 참조가 빠졌는지 자동 검증할 수 있으며, 실제 Lobby/Farm/Main 씬을 PlayMode에서 로드하는 스모크 QA까지 통과합니다. 잘못된 농장 액션, 상점 구매/판매, Save / Load / New Game, 설정 UI 버튼 경유 저장 흐름, 기본 재투자 경제 흐름, FarmGridController 좌표/Tilemap 갱신, 시작 인벤토리 지급 규칙, 씬 설치 도구의 최소 계약도 자동 검증합니다. HUD/상점/설정/인벤토리의 표시 문구는 한국어 기준으로 1차 통일했습니다.
 
-## 지금까지 구현된 것
+## 이번 작업 완료
 
-### 1. 코어 게임 흐름
+- `RuntimePrefabSceneInstaller`에 씬 검증 메뉴와 명령줄 검증 메서드를 추가했습니다.
+- Lobby/Farm/Marketplace/Main 씬을 대상으로 `ReinstallAndValidateConfiguredScenesFromCommandLine`을 실행했습니다.
+- Unity batch-mode에서 `Configured runtime scene validation: validation passed.`를 확인했습니다.
+- `HUDUI`가 없는 씬에서는 `FarmInteractionController.hudUI`를 선택 참조로 취급해 불필요한 경고가 나오지 않게 했습니다.
+- `FarmInteractionController`에 밭 갈기, 심기, 물 주기, 수확 실패 이유 메시지를 추가했습니다.
+- HUD 상호작용 힌트가 현재 선택한 도구/씨앗 기준으로 더 구체적인 안내를 표시합니다.
+- `FarmInteractionPlayModeTests`를 추가해 실제 컴포넌트 조합으로 농장 루프를 자동 검증합니다.
+- 농장 상호작용 추가 후 Unity Test Runner batch-mode PlayMode 테스트 통과를 확인했습니다.
+- `InventoryShopUIController`에 구매/판매 수량 선택을 추가했습니다.
+- 상점/인벤토리 화면에 선택 아이템 상세 패널을 추가했습니다.
+- 아이콘이 없는 아이템은 이름 첫 글자를 기본 아이콘처럼 표시하도록 했습니다.
+- `UIContractPlayModeTests`에 상점 수량/상세 패널 UXML 계약을 추가했습니다.
+- `GameManager`의 New Game 흐름에 `StartingInventoryLoader`를 연결해 새 게임 후 시작 아이템을 다시 지급하도록 했습니다.
+- `GameManagerSaveLoadPlayModeTests`를 추가해 `GameManager` 기준 Save / Load / New Game 통합 흐름을 검증합니다.
+- Save / Load가 골드, 인벤토리, Tick, 농장 작물 상태를 복원하는지 확인했습니다.
+- New Game이 저장 파일 삭제, 골드/틱/선택 슬롯/농장 초기화, 시작 인벤토리 재지급을 수행하는지 확인했습니다.
+- 저장/새 게임 통합 테스트 추가 후 Unity Test Runner batch-mode PlayMode 테스트 통과를 확인했습니다.
+- `ShopSystem`에 현재 골드와 인벤토리 공간 기준 최대 구매 수량 계산을 추가했습니다.
+- `ShopSystem`에 현재 보유량 기준 최대 판매 수량 계산을 추가했습니다.
+- 상점 UI 수량 조절이 선택 아이템의 구매/판매 가능 수량 한계를 따라가도록 개선했습니다.
+- 상점 상세 패널에 최대 구매/판매 가능 수량을 표시하도록 했습니다.
+- 씨앗 구매 후 수확물을 판매하면 다음 씨앗을 다시 살 수 있는 기본 재투자 루프 테스트를 추가했습니다.
+- Unity Test Runner batch-mode PlayMode 테스트 결과 `17 passed / 0 failed`를 확인했습니다.
+- `SettingUIControllerPlayModeTests`를 추가해 실제 설정 UI 버튼 경유 Save / Load / New Game 흐름을 검증합니다.
+- 저장 파일이 없을 때 Load 버튼이 상태 메시지를 표시하는지 확인했습니다.
+- Save / Load 버튼 클릭 후 골드, 인벤토리, Tick, 농장 작물 상태가 복원되는지 확인했습니다.
+- New Game 버튼과 확인 팝업을 거쳐 저장 파일 삭제, 런타임 초기화, 시작 인벤토리 재지급이 되는지 확인했습니다.
+- Unity Test Runner batch-mode PlayMode 테스트 결과 `19 passed / 0 failed`를 확인했습니다.
+- `FarmGridControllerPlayModeTests`를 추가해 `originCell`, Tilemap 레이아웃, 셀 중심/크기 계산을 검증합니다.
+- `FarmGridController`의 밭 갈기, 심기, 물 주기, 성장, 수확 시 Tilemap 타일과 작물 Sprite가 갱신되는지 확인했습니다.
+- Unity Test Runner batch-mode PlayMode 테스트 결과 `21 passed / 0 failed`를 확인했습니다.
+- `StartingInventoryLoaderPlayModeTests`를 추가해 시작 도구/씨앗 지급 규칙을 검증합니다.
+- 선호 슬롯 배치, 선호 슬롯 충돌 시 빈 슬롯 fallback, 중복 지급 방지, 기존 인벤토리 교체 지급을 확인했습니다.
+- Unity Test Runner batch-mode PlayMode 테스트 결과 `24 passed / 0 failed`를 확인했습니다.
+- `RuntimePrefabSceneInstaller`가 `Player`도 생성/정리 대상에 포함하도록 보강했습니다.
+- Farm 씬 자동 조립 시 `GameManager.startingInventoryLoader` 참조를 명시적으로 연결하고, 검증 도구가 누락을 잡도록 했습니다.
+- `RuntimePrefabSceneInstallerEditModeTests`를 추가해 임시 Farm 씬 설치, 필수 런타임 계약, 반복 설치 시 중복 제거를 검증합니다.
+- Lobby/Farm/Marketplace/Main 씬을 재설치하고 새 검증 조건으로 통과를 확인했습니다.
+- Unity Test Runner batch-mode EditMode 테스트 결과 `2 passed / 0 failed`를 확인했습니다.
+- Unity Test Runner batch-mode PlayMode 테스트 결과 `24 passed / 0 failed`를 다시 확인했습니다.
+- `RuntimePrefabSceneInstaller`가 비농장 씬에 남은 `FarmGridController`, `FarmInteractionController`, `StartingInventoryLoader` 같은 농장 런타임 컴포넌트를 제거하도록 보강했습니다.
+- 예전 자동 조립 잔재였던 `FarmGroundTileMap`, `FarmCropTileMap`, `FarmWateredOverlayTileMap`, `FieldTile Debug Tester` 정리도 설치 도구에 포함했습니다.
+- 비농장 씬 검증에서 농장 런타임 컴포넌트가 남아 있으면 실패하도록 했습니다.
+- `SceneSmokePlayModeTests`를 추가해 실제 `FarmScene`, `MainScene`, `LobbyScene` 로드 후 런타임/UI/카메라/농장 타겟/비농장 씬 잔재를 검증합니다.
+- Unity Test Runner batch-mode PlayMode 테스트 결과 `27 passed / 0 failed`를 확인했습니다.
+- `DEVELOPMENT_STATUS.md`를 현재 검증 결과와 다음 개발 순서에 맞게 갱신했습니다.
+- UI 표시 언어 기준을 한국어로 잡고 `InventoryUI`, `InventoryShop`, `SettingUI` UXML의 고정 라벨을 한국어로 정리했습니다.
+- `HUDUI` 안에 공용 UI 문자열/포맷 헬퍼를 추가해 골드, 날짜, Tick, 선택 아이템, 상점 상세 패널, 설정 상태 메시지 문구를 일관되게 표시하도록 했습니다.
+- `InventoryShopUIController`의 구매/판매 버튼, 가격, 선택 아이템, 상세 패널, 잠금/판매 불가/구매 불가 문구를 한국어 기준으로 정리했습니다.
+- `SettingUIController`의 저장/불러오기/새 게임 상태 메시지를 한국어로 정리하고 기존 PlayMode 테스트 기대값을 갱신했습니다.
+- `FarmInteractionController`의 HUD 메시지와 타겟 힌트, 타일/작물 상태 표시를 한국어로 정리했습니다.
+- `UIContractPlayModeTests`에 주요 UXML 표시 문구가 한국어인지 확인하는 계약 테스트를 추가했습니다.
+- Unity Test Runner batch-mode PlayMode 테스트 결과 `28 passed / 0 failed`를 확인했습니다.
+
+## 구현 완료
+
+### 1. 코어 런타임
 
 - `GameSession`
-  - 씬 전환 후에도 유지되는 런타임 세션 싱글톤입니다.
-  - 플레이어 인벤토리, 골드, 선택된 핫바 슬롯을 보관합니다.
+  - 씬 전환 후에도 유지되는 인벤토리, 골드, 선택 핫바 슬롯 상태를 관리합니다.
 - `GameManager`
-  - 게임 상태를 `Title`, `Ready`, `Playing`, `Paused`, `Ended`, `GameOver`로 관리합니다.
-  - 틱 시작/정지, 플레이어 조작 활성화, 저장/불러오기 진입점을 가지고 있습니다.
+  - 게임 상태 전환, 시작/일시정지/재개/종료, 저장/불러오기/새 게임 흐름을 관리합니다.
+  - `NewGame()`과 `ResetRuntimeState()`로 골드, 인벤토리, 핫바, 농장, Tick 상태를 초기화합니다.
+  - 새 게임 초기화 후 `StartingInventoryLoader`를 통해 시작 도구/씨앗을 다시 지급합니다.
 - `TickManager`
-  - 일정 간격으로 Tick을 증가시키고 `ITickable` 대상에게 Tick을 전달합니다.
-  - 일차 계산, 일 변경 이벤트, 일시정지/재개, 강제 Tick 기능이 있습니다.
+  - Tick, Day, TickInDay 계산과 `ITickable` 등록/해제, 강제 Tick, Pause/Resume을 지원합니다.
 - `EconomyManager`
-  - 골드 추가, 사용, 구매 가능 여부 확인을 담당합니다.
+  - 골드 추가/차감, 구매 가능 여부를 관리합니다.
 - `SaveManager`
-  - JSON 저장/불러오기/삭제 기능이 있습니다.
-  - 저장 대상은 Tick, Day, Gold, Inventory, FieldTile입니다.
+  - JSON 기반 저장/불러오기/삭제를 지원합니다.
+  - 저장 대상은 Tick, Day, Gold, Inventory, Farm field 상태입니다.
+- `AudioManager`
+  - 음악/SFX 소스와 볼륨 제어 구조가 준비되었습니다.
+- `SettingsManager`
+  - 마스터/BGM/SFX 볼륨, 전체화면, VSync 설정을 저장하고 `AudioManager`와 동기화합니다.
+- `SceneFlowManager`
+  - Lobby/Farm/Marketplace/Main 씬 이름과 씬 이동 흐름을 관리합니다.
+- `GameDatabase`
+  - 런타임에서 사용할 아이템, 작물, 상점 상품 데이터를 한곳에서 조회할 수 있게 준비되었습니다.
 
-### 2. 인벤토리와 아이템
+### 2. 인벤토리와 핫바
 
-- `ItemData`
-  - 아이템 ID, 이름, 타입, 최대 스택, 구매가, 판매가, 아이콘을 가진 ScriptableObject입니다.
-- `Inventory`, `InventorySlot`, `ItemStack`
-  - 아이템 추가, 제거, 슬롯 이동, 스왑, 병합, 저장 데이터 생성/복원을 지원합니다.
-- `InventoryUIController`
-  - UI Toolkit 기반 인벤토리 UI입니다.
-  - 메인 인벤토리 27칸과 핫바 9칸을 표시하고 클릭 이동을 지원합니다.
+- `ItemData`, `ItemStack`, `InventorySlot`, `Inventory`
+  - 아이템 ID, 이름, 타입, 스택, 가격, 아이콘 데이터와 인벤토리 조작을 처리합니다.
 - `HotbarControl`
-  - 핫바 9칸 표시, 선택 슬롯 표시, 아이콘/수량 표시를 담당합니다.
+  - `GameSession.SelectedHotbarSlotIndex`를 기준으로 선택 슬롯을 동기화합니다.
+  - 인벤토리 변경 후 핫바 새로고침을 지원합니다.
+- `StartingInventoryLoader`
+  - 플레이 시작 시 기본 도구와 씨앗을 지급합니다.
+  - 기본 슬롯 예시: Hoe 0번, WateringCan 1번, Wheat Seed 2번, Carrot Seed 3번.
+  - 선호 슬롯, fallback 슬롯, 중복 지급 방지, 기존 인벤토리 교체 지급이 PlayMode 테스트로 검증되었습니다.
 
-### 3. 농장/작물 로직
+### 3. 농장 도메인 로직
 
 - `CropData`
-  - 작물 ID, 이름, 성장 단계, 단계별 Tick, 단계별 Sprite, 수확 아이템을 가진 ScriptableObject입니다.
+  - 작물 ID, 이름, 성장 단계, 단계별 Tick, 단계별 Sprite, 수확 아이템을 가집니다.
 - `CropInstance`
   - 개별 작물의 성장 Tick, 현재 단계, 수확 가능 상태를 관리합니다.
 - `FieldTile`
-  - 타일 상태를 `Empty`, `Tiled`, `Planted`, `Grown`으로 관리합니다.
-  - 밭 갈기, 심기, 물주기, Tick 성장, 수확을 지원합니다.
+  - `Empty`, `Tiled`, `Planted`, `Grown` 상태를 관리합니다.
+  - 밭 갈기, 심기, 물 주기, Tick 성장, 수확을 처리합니다.
 - `FarmGrid`
-  - 2차원 밭 타일 배열을 관리합니다.
-  - 좌표 유효성 검사, 타일 조작, 전체 Tick 처리, 저장/복원 로직이 있습니다.
-- `FarmTileView`
-  - SpriteRenderer 기반 타일 표시용 뷰가 준비되어 있습니다.
-- 테스트용 작물/아이템 데이터와 성장 단계 Sprite가 `Assets/TestData`에 있습니다.
+  - 2차원 농장 타일 배열과 저장 데이터 생성/복원을 담당합니다.
+- `FarmGridController`
+  - 실제 씬의 Tilemap과 `FarmGrid`를 연결합니다.
+  - `TickManager`에 등록되어 작물 성장을 진행합니다.
+  - Tilemap 갱신, 저장/불러오기/새 게임, 좌표 변환을 제공합니다.
+  - `GridToCellWorldBounds()`와 `GetCellWorldSize()`로 타겟 셀 표시를 지원합니다.
+  - 좌표 변환과 Tilemap 갱신 흐름이 PlayMode 테스트로 검증되었습니다.
 
-### 4. 상점/경제 UI
+### 4. 플레이어 농장 상호작용
+
+- `FarmInteractionController`
+  - 선택 아이템에 따라 농장 액션을 실행합니다.
+  - Hoe: 빈 땅을 갈아진 밭으로 변경합니다.
+  - Watering Can: 심어진 작물 타일에 물을 줍니다.
+  - Seed: 갈아진 밭에 작물을 심고 씨앗 1개를 소비합니다.
+  - Interact: 다 자란 작물을 수확하고 인벤토리에 추가합니다.
+  - 실패 시 이미 심어진 작물, 갈 수 없는 타일, 물 줄 수 없는 상태, 수확 불가 상태, 인벤토리 가득 참 등을 HUD 메시지로 안내합니다.
+- 타겟 지정
+  - 마우스가 가까우면 마우스 위치를 우선 사용합니다.
+  - 아니면 플레이어가 마지막으로 바라본 방향의 셀을 사용합니다.
+- HUD 피드백
+  - 현재 타겟 좌표, 타일 상태, 물 준 상태, 작물 성장 단계, 선택 아이템 기준 행동 힌트를 표시합니다.
+- 타겟 마커
+  - `LineRenderer`로 현재 조작 대상 셀의 테두리를 화면에 표시합니다.
+
+### 5. UI
+
+- `InventoryUIController`
+  - UI Toolkit 기반 인벤토리 UI를 관리합니다.
+  - 슬롯 표시, 클릭 이동, 핫바 갱신과 연결되어 있습니다.
+- `InventoryShopUIController`
+  - 상점/인벤토리 패널을 표시합니다.
+  - UXML 루트 이름을 `InventoryShopRoot` 기준으로 맞췄습니다.
+  - `ShopSystem` 기반 구매/판매 흐름을 사용합니다.
+  - 선택 아이템 판매 UI가 추가되었습니다.
+  - 구매/판매 수량 조절, 선택 아이템 상세 패널, 아이콘 없는 아이템의 기본 이니셜 표시를 지원합니다.
+  - 구매/판매/상세/상태 문구를 한국어 기준으로 표시합니다.
+- `SettingUIController`
+  - 설정 패널, 볼륨, 전체화면, VSync 제어를 담당합니다.
+  - Save / Load / New Game 버튼을 제공합니다.
+  - New Game 확인 팝업을 제공합니다.
+  - 버튼 클릭 경유 저장/불러오기/새 게임 흐름과 한국어 상태 메시지가 PlayMode 테스트로 검증되었습니다.
+- `HUDUI`
+  - 날짜, Tick, 시간, 골드, 선택 아이템, 농장 타일/작물 정보, 메시지, 상호작용 힌트를 표시합니다.
+  - 화면 표시용 공용 한국어 문자열/포맷 헬퍼를 함께 제공합니다.
+
+### 6. 상점과 경제
 
 - `ShopItemData`, `ShopItemEntry`, `ShopSystem`
-  - 구매/판매 가능 여부, 가격 계산, 골드 차감/복구, 인벤토리 추가/제거 로직이 있습니다.
-- `InventoryShopUIController`
-  - 인벤토리와 상점 패널을 열고 닫는 UI가 있습니다.
-  - 상점 아이템 목록, 구매 버튼, 골드 표시, 인벤토리 드래그 이동 기능이 구현되어 있습니다.
+  - 구매/판매 가능 여부, 가격 계산, 골드 차감/추가, 인벤토리 추가/제거를 처리합니다.
+  - 골드, 인벤토리 공간, 보유량 기준으로 최대 구매/판매 가능 수량을 계산합니다.
+- 상점 UI
+  - 씨앗 구매, 수확물 판매, 선택 아이템 판매 흐름이 준비되었습니다.
+  - 수량 선택으로 여러 개를 한 번에 구매/판매할 수 있습니다.
+  - 수량 선택 버튼은 현재 구매/판매 가능한 최대치에 맞춰 비활성화됩니다.
 
-### 5. 플레이어와 입력
+### 7. 씬 자동 조립 도구
 
-- `InputManager`
-  - 이동, 상호작용, 아이템 사용, 핫바 선택/스크롤, 인벤토리/상점 토글, UI 닫기 이벤트를 제공합니다.
-  - InputActionAsset이 없을 때 기본 액션맵을 생성합니다.
-- `PlayerController`
-  - Rigidbody2D 이동, Animator 파라미터 갱신, 핫바 슬롯 선택, 상호작용/아이템 사용 호출을 담당합니다.
-- `InteractionController`
-  - 주변 Collider에서 `IInteractable` 대상을 찾아 상호작용하거나 선택 아이템을 사용합니다.
-
-### 6. UI와 씬 구성
-
-- `UIController`
-  - 인벤토리, 상점, 설정 UI, 핫바 선택을 InputManager 이벤트와 연결합니다.
-- `SettingUIController`
-  - 설정 창 열기/닫기, 볼륨 라벨, 전체화면, VSync 토글을 처리합니다.
-- `HUDUI`
-  - 일자, Tick, 시간, 골드, 선택 아이템/도구, 타일/작물 정보, 메시지 표시용 API가 있습니다.
 - `RuntimePrefabSceneInstaller`
-  - 런타임 프리팹을 Main/Marketplace 씬에 설치하는 에디터 메뉴가 준비되어 있습니다.
+  - 런타임 공통 오브젝트, 입력, UI, 코어 매니저, 플레이어, 농장 오브젝트를 씬에 설치합니다.
+  - 메뉴:
+    - `Tycoon/Prefabs/Install Runtime Objects In Open Scene`
+    - `Tycoon/Prefabs/Install Runtime Objects In Configured Scenes`
+    - `Tycoon/Prefabs/Validate Runtime Objects In Open Scene`
+    - `Tycoon/Prefabs/Validate Runtime Objects In Configured Scenes`
+    - `Tycoon/Prefabs/Reinstall And Validate Configured Scenes`
+  - 명령줄:
+    - `Tycoon.Editor.RuntimePrefabSceneInstaller.InstallInConfiguredScenesFromCommandLine`
+    - `Tycoon.Editor.RuntimePrefabSceneInstaller.ValidateConfiguredScenesFromCommandLine`
+    - `Tycoon.Editor.RuntimePrefabSceneInstaller.ReinstallAndValidateConfiguredScenesFromCommandLine`
+  - 반복 실행 시 기존 런타임 오브젝트를 정리하고 다시 설치한 뒤, 필수 컴포넌트와 참조를 검증합니다.
+  - `Player`도 설치 도구의 생성/정리 대상에 포함되어, 예전 씬에 남은 농장 상호작용/시작 인벤토리 컴포넌트와 새 FarmRuntime 오브젝트가 중복되지 않게 했습니다.
+  - 비농장 씬에서는 남아 있는 농장 런타임 컴포넌트를 제거하고, 검증 단계에서도 농장 컴포넌트 잔재를 오류로 처리합니다.
+  - 예전 자동 조립 이름인 `FarmGroundTileMap`, `FarmCropTileMap`, `FarmWateredOverlayTileMap`, `FieldTile Debug Tester`도 재설치 시 정리합니다.
+  - Farm 씬에서는 `GameManager.startingInventoryLoader`까지 자동 연결하고 검증합니다.
+  - 검증 대상에는 `RuntimeCore`, `GameSession`, `GameManager`, `TickManager`, `AudioManager`, `SettingsManager`, `SceneFlowManager`, `GameDatabase`, `RuntimeInput`, `RuntimeUIRoot`, `Player`, `FarmGridController`, `FarmInteractionController`, `StartingInventoryLoader` 등이 포함됩니다.
+- `FarmSceneSetupTool`
+  - 농장 테스트에 필요한 참조를 현재 씬 또는 Main/Farm 씬에 자동 연결합니다.
+  - 메뉴:
+    - `Tycoon/Farm/Setup Active Farm Scene`
+    - `Tycoon/Farm/Setup Main And Farm Scenes`
+- 자동 연결 대상
+  - `GameSession`, `GameManager`, `TickManager`, `RuntimeInput`, `RuntimeUIRoot`, `Player`
+  - `FarmGridController`, 농장 Tilemap, `FarmInteractionController`, `StartingInventoryLoader`
+  - Hoe, Watering Can, Wheat/Carrot Seed, Wheat/Carrot Crop, 수확 아이템
 
-### 7. 네트워크 초안
+### 8. 테스트 데이터
 
-- `NetworkGameManager`
-  - Host/Client 시작, 접속/해제, Join/Ready/TickSync/Input 패킷 흐름의 기본 구조가 있습니다.
-- `INetworkTransport`, `NetworkPacket`, payload 클래스들이 있습니다.
-- `ReplicationSystem`, `CommandDispatcher`는 아직 빈 껍데기입니다.
+- 작물 데이터
+  - `Assets/TestData/Crops/Test_Wheat_Crop.asset`
+  - `Assets/TestData/Crops/Test_Carrot_Crop.asset`
+- 아이템 데이터
+  - `Test_Wheat_Item`
+  - `Test_Carrot_Item`
+  - `Test_Wheat_Seed_Item`
+  - `Test_Carrot_Seed_Item`
+  - `Tool_Hoe_Item`
+  - `Tool_WateringCan_Item`
+- 작물 단계 Sprite
+  - Wheat/Carrot 0~3 단계 Sprite가 준비되어 있습니다.
 
-### 8. 테스트
+### 9. 테스트
 
+- `CoreSystemsPlayModeTests`
+  - Inventory 추가/이동/삭제
+  - FieldTile 성장/수확
+  - ShopSystem 구매/판매/잠긴 상품
+  - ShopSystem 최대 구매/판매 가능 수량
+  - 씨앗 구매, 수확물 판매, 다음 씨앗 재구매로 이어지는 경제 루프
+  - SaveManager 저장/불러오기
+- `UIContractPlayModeTests`
+  - UXML 요소 이름과 컨트롤러 쿼리 계약 확인
+  - 인벤토리/상점/설정 UXML의 주요 표시 문구가 한국어인지 확인
 - `TickManagerPlayModeTests`
-  - Tick 실행과 Pause 동작에 대한 PlayMode 테스트가 있습니다.
+  - Tick 진행과 Pause 동작 확인
+- `FarmInteractionPlayModeTests`
+  - `FarmInteractionController` 기준 밭 갈기, 씨앗 심기, 물 주기, Tick 성장, 수확 루프 확인
+  - 잘못된 농장 액션이 타일/인벤토리 상태를 변경하지 않는지 확인
+- `FarmGridControllerPlayModeTests`
+  - `originCell`, `Grid`/`Tilemap` 셀 크기, 월드-그리드 좌표 변환 확인
+  - 밭 상태 변경, 작물 Sprite, 물 표시 Overlay가 Tilemap에 반영되는지 확인
+- `StartingInventoryLoaderPlayModeTests`
+  - 시작 아이템 선호 슬롯 배치와 fallback 슬롯 배치 확인
+  - 빈 인벤토리에서만 지급하는 규칙으로 중복 지급 방지 확인
+  - 기존 인벤토리를 비우고 시작 아이템으로 교체하는 지급 흐름 확인
+- `GameManagerSaveLoadPlayModeTests`
+  - `GameManager` 기준 저장/불러오기 후 골드, 인벤토리, Tick, 농장 작물 상태 복원 확인
+  - `NewGame()` 실행 후 저장 파일 삭제, 런타임 초기화, 시작 인벤토리 재지급 확인
+- `SettingUIControllerPlayModeTests`
+  - 설정 UI Save / Load 버튼 클릭 후 런타임 상태 저장/복원 확인
+  - New Game 버튼, 확인 팝업, Confirm 버튼 클릭 후 저장 파일 삭제와 런타임 초기화 확인
+- `RuntimePrefabSceneInstallerEditModeTests`
+  - 임시 Farm 씬을 만들고 `Install Runtime Objects In Open Scene` 경로로 런타임 오브젝트 설치 확인
+  - 필수 루트/컴포넌트/직렬화 참조, FarmGrid Tilemap 기본 페인트, Player 스폰 위치 확인
+  - 같은 씬에 반복 설치해도 `RuntimeCore`, `RuntimeUIRoot`, `Player`, `FarmRuntime`, `FarmInteraction`, `StartingInventory` 등이 중복 생성되지 않는지 확인
+- `SceneSmokePlayModeTests`
+  - 실제 `FarmScene`을 PlayMode로 로드해 GameManager, TickManager, Player, FarmGrid, FarmInteraction, 시작 인벤토리, Hotbar/UI 바인딩 확인
+  - 플레이어와 현재 농장 타겟 셀이 카메라 안에 들어오는지 확인
+  - 타겟 마커가 생성되고 4개 포인트로 표시 준비되는지 확인
+  - 실제 `MainScene`, `LobbyScene`을 로드해 공통 런타임/UI가 뜨고 농장 런타임 컴포넌트 잔재가 없는지 확인
 
-## 현재 미완성/주의할 점
+## 최근 검증 결과
 
-- `FarmGrid`를 실제 씬에서 생성하고 `TickManager`, `GameManager`, Tilemap과 연결하는 MonoBehaviour가 아직 보이지 않습니다.
-- `FarmGrid.RefreshTileVisual()`은 구조만 있고 실제 `TileBase`/작물 Sprite를 Tilemap에 반영하지 않습니다.
-- `FieldTile`, `FarmGrid`는 농장 규칙을 가지고 있지만 플레이어가 Hoe/WateringCan/Seed로 타일을 조작하는 연결부가 아직 없습니다.
-- `InventoryShopUIController`는 UXML의 루트 이름이 `InventoryShopRoot`인데 코드에서는 `"Root"`를 찾고 있어 런타임 NullReference 가능성이 큽니다.
-- `InventoryShopUIController`의 `createDebugRuntimeData`가 기본값 `true`라 실제 게임 시작 시 테스트 아이템이 자동 주입될 수 있습니다.
-- 상점 구매 UI는 있으나 `ShopSystem`을 직접 사용하지 않고 컨트롤러 내부에서 구매 처리를 따로 합니다.
-- 판매 UI, 수량 선택, 구매/판매 후 저장 연동은 아직 부족합니다.
-- 저장 시스템은 준비되어 있지만 플레이어가 직접 저장/불러오기/새 게임을 실행하는 UI 흐름은 아직 없습니다.
-- 네트워크 구조는 초안 단계입니다. 싱글플레이 핵심 루프가 안정화되기 전에는 우선순위를 낮게 두는 편이 좋습니다.
-- `FieldTileDebugTester`는 수확 후 상태를 `Empty`로 기대하지만 실제 `FieldTile.Harvest()`는 `Tiled`로 유지합니다. 테스트/디버그 기대값을 현재 규칙에 맞춰 정리해야 합니다.
+아래 명령은 최근 작업 후 통과했습니다.
 
-## 지금 바로 개발하면 좋은 것
+```powershell
+dotnet build Game.Runtime.csproj --no-restore -maxcpucount:1
+dotnet build PlayMode.csproj --no-restore -maxcpucount:1
+dotnet test PlayMode.csproj --no-build -maxcpucount:1
+```
 
-가장 먼저 할 일은 **농장 로직을 실제 플레이 가능한 씬 기능으로 연결하는 것**입니다.
+참고: `dotnet test PlayMode.csproj --no-build -maxcpucount:1`는 성공 종료했지만 Unity Test Runner의 상세 리포트를 별도로 출력하지는 않았습니다.
 
-현재 코어 로직, 인벤토리, 작물 성장, 저장 구조는 꽤 많이 만들어져 있지만, 플레이어 입장에서는 아직 "밭을 갈고, 씨앗을 심고, 물을 주고, 자라면 수확한다"는 핵심 루프가 완전히 이어지지 않았습니다. 이 루프가 붙으면 이후 상점, 저장, UI, 밸런싱 작업이 모두 검증 가능해집니다.
+Unity batch-mode 검증도 통과했습니다.
 
-## 추천 개발 순서
+```powershell
+& 'C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Unity.exe' -batchmode -quit -projectPath 'C:\Users\black\wkspaces\Tycoon' -executeMethod Tycoon.Editor.RuntimePrefabSceneInstaller.ReinstallAndValidateConfiguredScenesFromCommandLine -logFile 'C:\Users\black\wkspaces\Tycoon\Temp\runtime-scene-validation.log'
+```
 
-### 1. FarmGrid 씬 연결
+결과:
 
-- `FarmGridController` 같은 MonoBehaviour를 추가합니다.
-- 씬의 Tilemap, 가로/세로 크기, 빈 땅/갈린 땅/물 준 땅 TileBase를 Inspector에서 연결합니다.
-- `FarmGrid`를 생성하고 `GameManager.SetFarmGrid()`로 넘깁니다.
-- `TickManager`에 농장 Tick 처리를 등록합니다.
-- `RefreshTileVisual()`이 실제 Tilemap을 갱신하도록 TileBase/Sprite 표시 방식을 결정합니다.
+```text
+Configured runtime scene validation: validation passed.
+Exiting batchmode successfully now!
+```
+
+Unity Test Runner EditMode batch-mode도 통과했습니다.
+
+```powershell
+& 'C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Unity.exe' -batchmode -projectPath 'C:\Users\black\wkspaces\Tycoon' -runTests -testPlatform EditMode -testResults 'C:\Users\black\wkspaces\Tycoon\Temp\editmode-test-results.xml' -logFile 'C:\Users\black\wkspaces\Tycoon\Temp\editmode-tests.log'
+```
+
+결과:
+
+```text
+EditMode test-run: Passed, total 2, passed 2, failed 0, skipped 0.
+```
+
+참고: `dotnet build Assembly-CSharp-Editor.csproj --no-restore -maxcpucount:1`는 Unity가 생성한 패키지 프로젝트의 `Temp\Bin` 메타데이터 경로 문제로 실패했습니다. 같은 코드에 대해 Unity batch-mode의 Bee 컴파일은 `Assembly-CSharp-Editor.dll`까지 성공했고, 이후 씬 재설치/검증도 통과했습니다.
+
+Unity Test Runner PlayMode batch-mode도 통과했습니다.
+
+```powershell
+& 'C:\Program Files\Unity\Hub\Editor\6000.3.10f1\Editor\Unity.exe' -batchmode -projectPath 'C:\Users\black\wkspaces\Tycoon' -runTests -testPlatform PlayMode -testResults 'C:\Users\black\wkspaces\Tycoon\Temp\playmode-test-results.xml' -logFile 'C:\Users\black\wkspaces\Tycoon\Temp\playmode-tests.log'
+```
+
+결과:
+
+```text
+PlayMode test-run: Passed, total 28, passed 28, failed 0, skipped 0.
+```
+
+참고: Unity 로그에는 `Temp\editmode-test-results.xml`와 `Temp\playmode-test-results.xml` 저장이 찍혔지만, 상세 XML은 실행 후 `C:\Users\black\AppData\LocalLow\DefaultCompany\Tycoon\TestResults.xml`에서 확인했습니다.
+
+## 현재 사용 가능한 플레이 루프
+
+1. Unity에서 농장 테스트할 씬을 엽니다.
+2. `Tycoon/Prefabs/Install Runtime Objects In Open Scene` 또는 `Tycoon/Prefabs/Reinstall And Validate Configured Scenes`를 실행합니다.
+3. Play Mode 진입.
+4. 핫바에서 Hoe를 선택해 밭을 갑니다.
+5. Wheat/Carrot Seed를 선택해 씨앗을 심습니다.
+6. Watering Can으로 물을 줍니다.
+7. Tick이 지나 작물이 자라면 Interact로 수확합니다.
+8. 인벤토리와 상점 UI에서 구매/판매 흐름을 확인합니다.
+9. 설정 UI에서 Save / Load / New Game을 확인합니다.
+
+## 남은 주의 사항
+
+- Unity batch-mode 설치/검증은 통과했지만, 실제 Unity Editor Play Mode에서 전체 흐름을 눈으로 확인하는 QA는 아직 필요합니다.
+- 씬 자동 조립 도구가 만든 오브젝트 배치와 기존 수동 배치가 겹치지 않는지는 커밋 전 씬 diff로 다시 확인해야 합니다.
+- `FarmGrid` 내부의 예전 `RefreshTileVisual()` 주석 로직은 남아 있지만, 실제 시각 갱신은 현재 `FarmGridController`가 담당합니다.
+- 에디터 메뉴 실행 후 씬 저장이 일어나므로, 커밋 전 씬 diff를 꼭 확인해야 합니다.
+- 현재 Git 상태에 `_Recovery` 파일 삭제가 보입니다. 의도한 정리인지 커밋 전에 확인해야 합니다.
+- 네트워크 관련 클래스는 초안 수준이며 아직 실제 플레이 루프와 연결하지 않았습니다.
+
+## 다음 개발 예정
+
+### 1. 실제 Unity Editor 화면 QA
+
+- 자동화 가능한 씬 로드/런타임 잔재/기본 카메라 가시성 스모크 QA는 `SceneSmokePlayModeTests`로 추가했습니다.
+- Unity Editor에서 Farm/Main 씬을 직접 열고 Play Mode로 진입합니다.
+- 밭 갈기, 심기, 물 주기, 성장, 수확, 저장, 불러오기를 눈으로 확인합니다.
+- 자동 생성 오브젝트 위치, 정렬 순서, Tilemap 레이어, UI 표시 겹침을 확인합니다.
+- 저장/불러오기 후 농장과 인벤토리 상태가 유지되는지 확인합니다.
 
 완료 기준:
 
-- Play 모드에서 특정 좌표의 타일 상태 변경이 화면에 보입니다.
-- Tick이 지나면 작물 단계가 바뀌고 화면에 반영됩니다.
-- 저장 후 불러오면 밭 상태와 작물 상태가 복원됩니다.
+- 메뉴 한 번 실행 후 Play Mode에서 농장 루프가 바로 동작합니다.
+- 저장/불러오기 후 농장과 인벤토리 상태가 유지됩니다.
+- 화면에서 타겟 마커, HUD, 인벤토리/상점/설정 UI가 겹침 없이 보입니다.
 
-### 2. 플레이어 농장 상호작용
+### 2. 상점/경제 콘텐츠 후속
 
-- 플레이어 앞 좌표 또는 마우스가 가리키는 좌표를 FarmGrid 좌표로 변환합니다.
-- 선택 아이템 타입에 따라 동작을 연결합니다.
-  - Hoe: Empty 타일을 Tiled로 변경
-  - Seed: Tiled 타일에 CropData 심기
-  - WateringCan: Planted 타일 물주기
-  - 빈 손/상호작용: Grown 타일 수확
-- 씨앗 사용 시 인벤토리에서 1개를 제거합니다.
-- 수확 성공 시 수확 아이템을 인벤토리에 추가합니다.
+- 상점 상품 잠금/해금 규칙 결정
+- 실제 아이콘 Sprite 누락 아이템 정리
+- 작물 종류가 늘어났을 때 씨앗 구매가, 수확물 판매가, 시작 골드 재조정
+- 실제 플레이 시간 기준 수익률 조정
 
 완료 기준:
 
-- 핫바에서 도구/씨앗을 선택해 농장 루프를 직접 플레이할 수 있습니다.
-- 실패 조건이 명확합니다. 예를 들어 이미 심어진 곳에는 씨앗을 다시 심지 않습니다.
+- 여러 작물의 씨앗 구매, 작물 재배, 수확물 판매, 재투자 흐름이 자연스럽게 이어집니다.
 
-### 3. 인벤토리/핫바 동기화 안정화
+### 3. UI와 현지화 정리
 
-- PlayerController의 선택 슬롯과 HotbarControl의 선택 표시가 항상 같은 값을 보도록 정리합니다.
-- 인벤토리 이동, 구매, 수확 후 Hotbar/Inventory UI가 즉시 새로고침되게 만듭니다.
-- ItemType이 `Tycoon.Data.ItemType`과 `Tycoon.Hotbar.ItemType`으로 나뉘어 있으므로 장기적으로 하나의 기준으로 정리합니다.
-
-완료 기준:
-
-- 아이템 획득/소비/이동 후 모든 UI가 같은 인벤토리 상태를 표시합니다.
-- 핫바 선택, 마우스 휠, 숫자키 선택이 엇갈리지 않습니다.
-
-### 4. 상점 UI 정리
-
-- `InventoryShopUIController`의 루트 쿼리 이름을 UXML과 맞춥니다.
-- 구매 처리를 `ShopSystem`으로 위임합니다.
-- 판매 버튼 또는 선택 슬롯 판매 흐름을 추가합니다.
-- `createDebugRuntimeData`는 개발 전용으로 끄거나 에디터/디버그 조건으로 제한합니다.
+- HUD/상점/설정/인벤토리의 핵심 문구는 한국어 기준으로 1차 통일했습니다.
+- 남은 영어 아이템 이름은 데이터 에셋의 표시 이름 정책을 정한 뒤 정리합니다.
+- UI Toolkit 스타일을 실제 게임 화면 기준으로 다듬습니다.
+- 모바일/다양한 해상도에서 텍스트가 겹치지 않는지 확인합니다.
 
 완료 기준:
 
-- 상점에서 씨앗을 사고, 농장에 심고, 수확물을 팔아 골드를 얻을 수 있습니다.
-- 골드 부족, 인벤토리 공간 부족, 잠긴 상품 메시지가 정상 표시됩니다.
+- 플레이 중 UI 문구가 일관되고, 화면에서 겹침 없이 읽힙니다.
 
-### 5. 저장/불러오기 사용자 흐름
+### 4. 네트워크는 뒤로 미루기
 
-- 설정 UI 또는 별도 메뉴에 Save, Load, New Game 버튼을 추가합니다.
-- 새 게임 시 `GameSession.ResetSession()`, FarmGrid 초기화, 저장 파일 삭제 흐름을 정리합니다.
-- 자동 저장 시점을 정합니다. 예: 앱 종료, 하루 종료, 수동 저장.
+네트워크 구조는 이미 일부 클래스가 있지만, 지금은 싱글 플레이 농장 루프 안정화가 우선입니다.
 
-완료 기준:
+권장 순서:
 
-- 게임을 종료했다 다시 켜도 골드, 인벤토리, 작물 상태가 유지됩니다.
-- 새 게임을 누르면 이전 저장 데이터가 남아 있지 않습니다.
+1. 싱글 플레이 농장 루프 안정화
+2. 저장/상점/인벤토리 안정화
+3. 네트워크 권위 구조 결정
+4. CommandDispatcher 구현
+5. ReplicationSystem 구현
+6. Host/Client 동기화 테스트
 
-### 6. 테스트 확장
+## 바로 다음 작업 추천
 
-- Inventory 추가/제거/이동 테스트를 추가합니다.
-- FieldTile 성장/수확 테스트를 추가합니다.
-- SaveManager 저장/복원 테스트를 추가합니다.
-- ShopSystem 구매/판매 테스트를 추가합니다.
-- UI는 최소한 UXML 이름과 컨트롤러 쿼리 이름이 맞는지 확인하는 스모크 테스트를 둡니다.
-
-완료 기준:
-
-- 핵심 데이터 로직은 Unity PlayMode 없이도 빠르게 검증할 수 있습니다.
-- PlayMode 테스트는 씬 연결과 Tick 동작 위주로 유지합니다.
-
-### 7. 네트워크는 나중으로 미루기
-
-- 현재는 싱글플레이 농장 루프가 먼저입니다.
-- 네트워크는 코어 루프가 안정된 뒤 다음 순서로 진행하는 것이 좋습니다.
-  - 실제 Transport 구현
-  - CommandDispatcher 구현
-  - ReplicationSystem 구현
-  - 호스트 권위 방식으로 농장/인벤토리 상태 동기화
-
-## 한 줄 결론
-
-다음 개발 목표는 **FarmGridController를 만들고, 플레이어 입력으로 밭 갈기/씨앗 심기/물주기/수확까지 이어지는 최소 플레이 루프를 완성하는 것**입니다.
-
-이게 끝나면 상점과 저장은 이미 만들어둔 기반 위에 자연스럽게 붙일 수 있습니다.
+다음 작업 하나만 고르면, `실제 Unity Editor 화면 QA`가 좋습니다.
+한국어 문구가 들어가면서 일부 버튼과 라벨 길이가 달라졌으니, Farm/Main 씬 Play Mode에서 HUD/상점/설정/인벤토리 겹침과 실제 조작감을 눈으로 확인하는 단계가 좋습니다.

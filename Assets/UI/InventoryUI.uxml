@@ -3,7 +3,7 @@
     <ui:VisualElement name="InventoryRoot" class="inventory-screen hidden">
         <ui:VisualElement name="InventoryWindow" class="inventory-window">
             <ui:VisualElement class="inventory-header">
-                <ui:Label text="Inventory" class="inventory-title"/>
+                <ui:Label text="인벤토리" class="inventory-title"/>
                 <ui:Button name="InventoryCloseButton" text="X" class="inventory-close-button"/>
             </ui:VisualElement>
             <ui:VisualElement name="InventoryGrid" class="inventory-grid">
