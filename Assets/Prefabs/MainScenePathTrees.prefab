@@ -1,0 +1,657 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8800001
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8800002}
+  m_Layer: 0
+  m_Name: MainScenePathTrees
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8800002
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8800001}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 8802001}
+  - {fileID: 8802002}
+  - {fileID: 8802003}
+  - {fileID: 8802004}
+  - {fileID: 8802005}
+  - {fileID: 8802006}
+  - {fileID: 8802007}
+  - {fileID: 8802008}
+  - {fileID: 8802009}
+  - {fileID: 8802010}
+  - {fileID: 8802011}
+  - {fileID: 8802012}
+  - {fileID: 8802013}
+  - {fileID: 8802014}
+  - {fileID: 8802015}
+  - {fileID: 8802016}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &8801001
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3761091418905499783, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Name
+      value: FarmPath_Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041875229305760144, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+--- !u!4 &8802001 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+  m_PrefabInstance: {fileID: 8801001}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801002
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3627015193113210330, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Name
+      value: FarmPath_Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471217280414481068, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+--- !u!4 &8802002 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+  m_PrefabInstance: {fileID: 8801002}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801003
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3761091418905499783, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Name
+      value: FarmPath_Tree_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041875229305760144, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+--- !u!4 &8802003 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+  m_PrefabInstance: {fileID: 8801003}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801004
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3627015193113210330, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Name
+      value: FarmPath_Tree_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471217280414481068, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+--- !u!4 &8802004 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+  m_PrefabInstance: {fileID: 8801004}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801005
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3627015193113210330, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Name
+      value: FarmPath_Tree_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471217280414481068, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+--- !u!4 &8802005 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+  m_PrefabInstance: {fileID: 8801005}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801006
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3761091418905499783, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Name
+      value: FarmPath_Tree_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041875229305760144, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+--- !u!4 &8802006 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+  m_PrefabInstance: {fileID: 8801006}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801007
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3627015193113210330, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Name
+      value: FarmPath_Tree_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471217280414481068, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+--- !u!4 &8802007 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+  m_PrefabInstance: {fileID: 8801007}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801008
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3761091418905499783, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Name
+      value: FarmPath_Tree_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041875229305760144, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+--- !u!4 &8802008 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+  m_PrefabInstance: {fileID: 8801008}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801009
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3761091418905499783, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Name
+      value: ShopPath_Tree_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041875229305760144, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+--- !u!4 &8802009 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+  m_PrefabInstance: {fileID: 8801009}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801010
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3627015193113210330, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Name
+      value: ShopPath_Tree_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471217280414481068, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+--- !u!4 &8802010 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+  m_PrefabInstance: {fileID: 8801010}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801011
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3761091418905499783, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Name
+      value: ShopPath_Tree_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041875229305760144, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+--- !u!4 &8802011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+  m_PrefabInstance: {fileID: 8801011}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801012
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3627015193113210330, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Name
+      value: ShopPath_Tree_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471217280414481068, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+--- !u!4 &8802012 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+  m_PrefabInstance: {fileID: 8801012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801013
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3627015193113210330, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Name
+      value: ShopPath_Tree_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471217280414481068, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+--- !u!4 &8802013 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+  m_PrefabInstance: {fileID: 8801013}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801014
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3761091418905499783, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Name
+      value: ShopPath_Tree_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041875229305760144, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+--- !u!4 &8802014 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+  m_PrefabInstance: {fileID: 8801014}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801015
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3627015193113210330, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Name
+      value: ShopPath_Tree_07
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5471217280414481068, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+--- !u!4 &8802015 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 920517900275581794, guid: 294cd0a6e6176ed4a961fd542da26a7a, type: 3}
+  m_PrefabInstance: {fileID: 8801015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8801016
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8800002}
+    m_Modifications:
+    - target: {fileID: 3761091418905499783, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Name
+      value: ShopPath_Tree_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 10.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4041875229305760144, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+--- !u!4 &8802016 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3602001173366035701, guid: 7fa8d7ab5d4878941a304e0076bdb0e6, type: 3}
+  m_PrefabInstance: {fileID: 8801016}
+  m_PrefabAsset: {fileID: 0}
