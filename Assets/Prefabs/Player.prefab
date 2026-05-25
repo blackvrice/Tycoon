@@ -110,6 +110,8 @@ MonoBehaviour:
   moveSpeed: 5
   animator: {fileID: 8683653121792376415}
   inputManager: {fileID: 0}
+  worldGrid: {fileID: 0}
+  movementProbeRadius: 0.2
   interactRange: 1.25
   interactableLayer:
     serializedVersion: 2

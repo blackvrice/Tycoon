@@ -44,11 +44,8 @@ TagManager:
   - name: Background
     uniqueID: 262783729
     locked: 0
-  - name: World
+  - name: Object
     uniqueID: 1196514981
-    locked: 0
-  - name: Player
-    uniqueID: 2102671135
     locked: 0
   - name: UI
     uniqueID: 111148057

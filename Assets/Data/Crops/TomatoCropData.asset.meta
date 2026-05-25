@@ -3,6 +3,12 @@ guid: 66822bd71e9e46a4be6182b7c0135996
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000
+<<<<<<< ours
   userData:
   assetBundleName:
   assetBundleVariant:
+=======
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> theirs
