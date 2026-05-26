@@ -5,7 +5,7 @@
 
 ## 현재 한 줄 요약
 
-농장 기본 플레이 루프는 코드상 연결되었고, 런타임 씬 자동 조립 도구와 PlayMode/EditMode 자동 QA까지 통과했습니다. 현재 기준으로는 에디터 메뉴 또는 명령줄로 Title/Farm/Marketplace/Main 씬을 재설치하고, 필수 런타임 오브젝트와 참조가 빠졌는지 자동 검증할 수 있으며, 실제 Title/Farm/Main 씬을 PlayMode에서 로드하는 스모크 QA까지 통과했습니다. Marketplace 씬도 `WorldTileMap`/`GameWorldGrid` 바닥 타일 계약을 갖도록 보강했습니다. 잘못된 농장 액션, 상점 구매/판매, Save / Load / New Game, 설정 UI 버튼 경유 저장 흐름, 기본 재투자 경제 흐름, FarmGridController 좌표/Tilemap 갱신, 시작 인벤토리 지급 규칙, 씬 설치 도구의 최소 계약도 자동 검증합니다. HUD/상점/설정/인벤토리의 표시 문구는 한국어 기준으로 1차 통일했습니다.
+농장 기본 플레이 루프는 코드상 연결되었고, 런타임 씬 자동 조립 도구와 PlayMode/EditMode 자동 QA까지 통과했습니다. 현재 기준으로는 에디터 메뉴 또는 명령줄로 Title/Farm/Marketplace/Main 씬을 재설치하고, 필수 런타임 오브젝트와 참조가 빠졌는지 자동 검증할 수 있으며, 실제 Title/Farm/Main 씬을 PlayMode에서 로드하는 스모크 QA까지 통과했습니다. Marketplace 씬도 `WorldTileMap`/`GameWorldGrid`는 Hill 바닥 계약을 갖고, Dirt는 별도 `DirtTileMap` 길 표시 레이어로만 쓰도록 보강했습니다. 잘못된 농장 액션, 상점 구매/판매, Save / Load / New Game, 설정 UI 버튼 경유 저장 흐름, 기본 재투자 경제 흐름, FarmGridController 좌표/Tilemap 갱신, 시작 인벤토리 지급 규칙, 씬 설치 도구의 최소 계약도 자동 검증합니다. HUD/상점/설정/인벤토리의 표시 문구는 한국어 기준으로 1차 통일했습니다.
 
 ## 전체 소스 상황
 
@@ -200,8 +200,8 @@ UI는 기능 단위 구현은 되어 있으므로, 이제는 "보이는 품질" 
 - `RuntimePrefabSceneInstaller`가 Main 씬에 `MainScenePathExit` 오브젝트를 자동 설치하고 필수 참조를 검증하도록 보강했습니다.
 - Title 씬의 시작 버튼 대상은 `MainScene`으로 맞춰, Main 씬 길을 허브로 거쳐 Farm/Marketplace로 이동하는 흐름을 사용합니다.
 - `GameWorldGrid`의 경계 셀 판정을 고쳐 레이아웃 안쪽 첫/마지막 셀도 명시된 타일 타입대로 이동 가능 여부를 따르도록 했습니다.
-- `MarketplaceScene`에 `WorldGrid`, `WorldTileMap`, `GameWorldGrid`를 추가하고 Player의 `worldGrid` 참조를 연결했습니다.
-- `RuntimePrefabSceneInstaller`가 Marketplace 프로필에 `WorldTileMap`이 없으면 생성하고 `DirtsRuleTile` 기반 바닥을 런타임에 페인트하도록 보강했습니다.
+- `MarketplaceScene`에 `WorldGrid`, `WorldTileMap`, `DirtTileMap`, `GameWorldGrid`를 추가하고 Player의 `worldGrid` 참조를 연결했습니다.
+- `RuntimePrefabSceneInstaller`가 Marketplace 프로필에 Hill 기반 `WorldTileMap`을 만들고, Dirt는 `DirtTileMap` 길 표시 레이어에만 칠하도록 보강했습니다.
 - `SceneSmokePlayModeTests`는 실제 프로젝트 씬 목록에 맞춰 `TitleScene`, `MainScene`, `MarketplaceScene`, `FarmScene`을 검증하고, Main 씬 경로 출구와 Marketplace 월드 타일맵 계약도 확인합니다.
 - 이번 변경 후 `dotnet build` 3종과 `dotnet test PlayMode.csproj --no-build -maxcpucount:1` 통과를 확인했습니다.
 - Unity batch-mode 재설치/Unity Test Runner는 현재 프로젝트가 Unity Editor에서 열려 있어 이번 턴에서는 실행하지 못했습니다.
@@ -395,7 +395,7 @@ UI는 기능 단위 구현은 되어 있으므로, 이제는 "보이는 품질" 
   - 플레이어와 현재 농장 타겟 셀이 카메라 안에 들어오는지 확인
   - 타겟 마커가 생성되고 4개 포인트로 표시 준비되는지 확인
   - 실제 `MainScene`, `MarketplaceScene`, `TitleScene`을 로드해 공통 런타임/UI가 뜨고 농장 런타임 컴포넌트 잔재가 없는지 확인
-  - Marketplace 씬의 `WorldTileMap`이 플레이어 스폰 지점 아래에 타일을 제공하고 `GameWorldGrid` 이동 가능 판정에 연결되는지 확인
+  - Marketplace 씬의 `WorldTileMap`이 Hill 바닥을 제공하고, `DirtTileMap`이 길 표시로만 쓰이며, `GameWorldGrid` 이동 가능 판정에 연결되는지 확인
   - `MainScenePathExitController`가 Main 씬 좌우 경계에서 Marketplace/Farm 씬 이름을 해석하는지 확인
 
 ## 최근 검증 결과
