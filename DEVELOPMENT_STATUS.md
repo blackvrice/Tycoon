@@ -5,7 +5,7 @@
 
 ## 현재 한 줄 요약
 
-농장 기본 플레이 루프는 코드상 연결되었고, 런타임 씬 자동 조립 도구와 PlayMode/EditMode 자동 QA까지 통과했습니다. 현재 기준으로는 에디터 메뉴 또는 명령줄로 Lobby/Farm/Marketplace/Main 씬을 재설치하고, 필수 런타임 오브젝트와 참조가 빠졌는지 자동 검증할 수 있으며, 실제 Lobby/Farm/Main 씬을 PlayMode에서 로드하는 스모크 QA까지 통과합니다. 잘못된 농장 액션, 상점 구매/판매, Save / Load / New Game, 설정 UI 버튼 경유 저장 흐름, 기본 재투자 경제 흐름, FarmGridController 좌표/Tilemap 갱신, 시작 인벤토리 지급 규칙, 씬 설치 도구의 최소 계약도 자동 검증합니다. HUD/상점/설정/인벤토리의 표시 문구는 한국어 기준으로 1차 통일했습니다.
+농장 기본 플레이 루프는 코드상 연결되었고, 런타임 씬 자동 조립 도구와 PlayMode/EditMode 자동 QA까지 통과했습니다. 현재 기준으로는 에디터 메뉴 또는 명령줄로 Title/Farm/Marketplace/Main 씬을 재설치하고, 필수 런타임 오브젝트와 참조가 빠졌는지 자동 검증할 수 있으며, 실제 Title/Farm/Main 씬을 PlayMode에서 로드하는 스모크 QA까지 통과합니다. 잘못된 농장 액션, 상점 구매/판매, Save / Load / New Game, 설정 UI 버튼 경유 저장 흐름, 기본 재투자 경제 흐름, FarmGridController 좌표/Tilemap 갱신, 시작 인벤토리 지급 규칙, 씬 설치 도구의 최소 계약도 자동 검증합니다. HUD/상점/설정/인벤토리의 표시 문구는 한국어 기준으로 1차 통일했습니다.
 
 ## 전체 소스 상황
 
@@ -143,7 +143,7 @@ UI는 기능 단위 구현은 되어 있으므로, 이제는 "보이는 품질" 
 ## 이번 작업 완료
 
 - `RuntimePrefabSceneInstaller`에 씬 검증 메뉴와 명령줄 검증 메서드를 추가했습니다.
-- Lobby/Farm/Marketplace/Main 씬을 대상으로 `ReinstallAndValidateConfiguredScenesFromCommandLine`을 실행했습니다.
+- Title/Farm/Marketplace/Main 씬을 대상으로 `ReinstallAndValidateConfiguredScenesFromCommandLine`을 실행했습니다.
 - Unity batch-mode에서 `Configured runtime scene validation: validation passed.`를 확인했습니다.
 - `HUDUI`가 없는 씬에서는 `FarmInteractionController.hudUI`를 선택 참조로 취급해 불필요한 경고가 나오지 않게 했습니다.
 - `FarmInteractionController`에 밭 갈기, 심기, 물 주기, 수확 실패 이유 메시지를 추가했습니다.
@@ -179,13 +179,13 @@ UI는 기능 단위 구현은 되어 있으므로, 이제는 "보이는 품질" 
 - `RuntimePrefabSceneInstaller`가 `Player`도 생성/정리 대상에 포함하도록 보강했습니다.
 - Farm 씬 자동 조립 시 `GameManager.startingInventoryLoader` 참조를 명시적으로 연결하고, 검증 도구가 누락을 잡도록 했습니다.
 - `RuntimePrefabSceneInstallerEditModeTests`를 추가해 임시 Farm 씬 설치, 필수 런타임 계약, 반복 설치 시 중복 제거를 검증합니다.
-- Lobby/Farm/Marketplace/Main 씬을 재설치하고 새 검증 조건으로 통과를 확인했습니다.
+- Title/Farm/Marketplace/Main 씬을 재설치하고 새 검증 조건으로 통과를 확인했습니다.
 - Unity Test Runner batch-mode EditMode 테스트 결과 `2 passed / 0 failed`를 확인했습니다.
 - Unity Test Runner batch-mode PlayMode 테스트 결과 `24 passed / 0 failed`를 다시 확인했습니다.
 - `RuntimePrefabSceneInstaller`가 비농장 씬에 남은 `FarmGridController`, `FarmInteractionController`, `StartingInventoryLoader` 같은 농장 런타임 컴포넌트를 제거하도록 보강했습니다.
 - 예전 자동 조립 잔재였던 `FarmGroundTileMap`, `FarmCropTileMap`, `FarmWateredOverlayTileMap`, `FieldTile Debug Tester` 정리도 설치 도구에 포함했습니다.
 - 비농장 씬 검증에서 농장 런타임 컴포넌트가 남아 있으면 실패하도록 했습니다.
-- `SceneSmokePlayModeTests`를 추가해 실제 `FarmScene`, `MainScene`, `LobbyScene` 로드 후 런타임/UI/카메라/농장 타겟/비농장 씬 잔재를 검증합니다.
+- `SceneSmokePlayModeTests`를 추가해 실제 `FarmScene`, `MainScene`, `TitleScene` 로드 후 런타임/UI/카메라/농장 타겟/비농장 씬 잔재를 검증합니다.
 - Unity Test Runner batch-mode PlayMode 테스트 결과 `27 passed / 0 failed`를 확인했습니다.
 - `DEVELOPMENT_STATUS.md`를 현재 검증 결과와 다음 개발 순서에 맞게 갱신했습니다.
 - UI 표시 언어 기준을 한국어로 잡고 `InventoryUI`, `InventoryShop`, `SettingUI` UXML의 고정 라벨을 한국어로 정리했습니다.
@@ -195,6 +195,14 @@ UI는 기능 단위 구현은 되어 있으므로, 이제는 "보이는 품질" 
 - `FarmInteractionController`의 HUD 메시지와 타겟 힌트, 타일/작물 상태 표시를 한국어로 정리했습니다.
 - `UIContractPlayModeTests`에 주요 UXML 표시 문구가 한국어인지 확인하는 계약 테스트를 추가했습니다.
 - Unity Test Runner batch-mode PlayMode 테스트 결과 `28 passed / 0 failed`를 확인했습니다.
+- `MainScenePathExitController`를 추가해 Main 씬 길의 왼쪽 끝은 `MarketplaceScene`, 오른쪽 끝은 `FarmScene`으로 이동하도록 했습니다.
+- `MainScenePathExitController`는 `GameWorldGrid`의 실제 이동 가능 경계를 기준으로 전환 지점을 계산하고, 씬 이동 중 중복 요청을 막습니다.
+- `RuntimePrefabSceneInstaller`가 Main 씬에 `MainScenePathExit` 오브젝트를 자동 설치하고 필수 참조를 검증하도록 보강했습니다.
+- Title 씬의 시작 버튼 대상은 `MainScene`으로 맞춰, Main 씬 길을 허브로 거쳐 Farm/Marketplace로 이동하는 흐름을 사용합니다.
+- `GameWorldGrid`의 경계 셀 판정을 고쳐 레이아웃 안쪽 첫/마지막 셀도 명시된 타일 타입대로 이동 가능 여부를 따르도록 했습니다.
+- `SceneSmokePlayModeTests`는 실제 프로젝트 씬 목록에 맞춰 `TitleScene`, `MainScene`, `FarmScene`을 검증하고, Main 씬 경로 출구 계약도 확인합니다.
+- Unity Test Runner batch-mode EditMode 테스트 결과 `4 passed / 0 failed`를 확인했습니다.
+- Unity Test Runner batch-mode PlayMode 테스트 결과 `33 passed / 0 failed`를 확인했습니다.
 - 전체 소스 상황, 현재 개발 판단, 앞으로의 개발 방향을 상단 요약으로 다시 정리했습니다.
 
 ## 구현 완료
@@ -384,7 +392,8 @@ UI는 기능 단위 구현은 되어 있으므로, 이제는 "보이는 품질" 
   - 실제 `FarmScene`을 PlayMode로 로드해 GameManager, TickManager, Player, FarmGrid, FarmInteraction, 시작 인벤토리, Hotbar/UI 바인딩 확인
   - 플레이어와 현재 농장 타겟 셀이 카메라 안에 들어오는지 확인
   - 타겟 마커가 생성되고 4개 포인트로 표시 준비되는지 확인
-  - 실제 `MainScene`, `LobbyScene`을 로드해 공통 런타임/UI가 뜨고 농장 런타임 컴포넌트 잔재가 없는지 확인
+  - 실제 `MainScene`, `TitleScene`을 로드해 공통 런타임/UI가 뜨고 농장 런타임 컴포넌트 잔재가 없는지 확인
+  - `MainScenePathExitController`가 Main 씬 좌우 경계에서 Marketplace/Farm 씬 이름을 해석하는지 확인
 
 ## 최근 검증 결과
 
@@ -393,6 +402,7 @@ UI는 기능 단위 구현은 되어 있으므로, 이제는 "보이는 품질" 
 ```powershell
 dotnet build Game.Runtime.csproj --no-restore -maxcpucount:1
 dotnet build PlayMode.csproj --no-restore -maxcpucount:1
+dotnet build Assembly-CSharp-Editor.csproj --no-restore -maxcpucount:1
 dotnet test PlayMode.csproj --no-build -maxcpucount:1
 ```
 
@@ -420,10 +430,10 @@ Unity Test Runner EditMode batch-mode도 통과했습니다.
 결과:
 
 ```text
-EditMode test-run: Passed, total 2, passed 2, failed 0, skipped 0.
+EditMode test-run: Passed, total 4, passed 4, failed 0, skipped 0.
 ```
 
-참고: `dotnet build Assembly-CSharp-Editor.csproj --no-restore -maxcpucount:1`는 Unity가 생성한 패키지 프로젝트의 `Temp\Bin` 메타데이터 경로 문제로 실패했습니다. 같은 코드에 대해 Unity batch-mode의 Bee 컴파일은 `Assembly-CSharp-Editor.dll`까지 성공했고, 이후 씬 재설치/검증도 통과했습니다.
+참고: `Assembly-CSharp-Editor.csproj` 빌드도 현재는 성공합니다. 이전에는 Unity가 생성한 패키지 프로젝트의 `Temp\Bin` 메타데이터 경로 문제로 실패한 적이 있었지만, 이번 검증에서는 같은 명령이 경고와 오류 없이 통과했습니다.
 
 Unity Test Runner PlayMode batch-mode도 통과했습니다.
 
@@ -434,7 +444,7 @@ Unity Test Runner PlayMode batch-mode도 통과했습니다.
 결과:
 
 ```text
-PlayMode test-run: Passed, total 28, passed 28, failed 0, skipped 0.
+PlayMode test-run: Passed, total 33, passed 33, failed 0, skipped 0.
 ```
 
 참고: Unity 로그에는 `Temp\editmode-test-results.xml`와 `Temp\playmode-test-results.xml` 저장이 찍혔지만, 상세 XML은 실행 후 `C:\Users\black\AppData\LocalLow\DefaultCompany\Tycoon\TestResults.xml`에서 확인했습니다.
@@ -450,6 +460,7 @@ PlayMode test-run: Passed, total 28, passed 28, failed 0, skipped 0.
 7. Tick이 지나 작물이 자라면 Interact로 수확합니다.
 8. 인벤토리와 상점 UI에서 구매/판매 흐름을 확인합니다.
 9. 설정 UI에서 Save / Load / New Game을 확인합니다.
+10. Main 씬에서는 길의 왼쪽 끝으로 가면 Marketplace, 오른쪽 끝으로 가면 Farm 씬 이동 흐름을 확인합니다.
 
 ## 남은 주의 사항
 
@@ -467,6 +478,7 @@ PlayMode test-run: Passed, total 28, passed 28, failed 0, skipped 0.
 - 자동화 가능한 씬 로드/런타임 잔재/기본 카메라 가시성 스모크 QA는 `SceneSmokePlayModeTests`로 추가했습니다.
 - Unity Editor에서 Farm/Main 씬을 직접 열고 Play Mode로 진입합니다.
 - 밭 갈기, 심기, 물 주기, 성장, 수확, 저장, 불러오기를 눈으로 확인합니다.
+- Main 씬 길의 좌우 끝에서 Marketplace/Farm 씬 이동이 실제 플레이 감각으로 자연스러운지 확인합니다.
 - 자동 생성 오브젝트 위치, 정렬 순서, Tilemap 레이어, UI 표시 겹침을 확인합니다.
 - 저장/불러오기 후 농장과 인벤토리 상태가 유지되는지 확인합니다.
 
