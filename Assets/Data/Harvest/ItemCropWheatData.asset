@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1bb1eeb5e244c5a7ed2d6167b103bf, type: 3}
   m_Name: ItemCropWheatData
   m_EditorClassIdentifier: Game.Runtime::Tycoon.Data.ItemData
-  itemId: wheat
+  itemId: wheat_crop
   itemName: Wheat
   itemType: 2
   maxStack: 99

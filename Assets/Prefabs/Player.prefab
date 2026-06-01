@@ -81,8 +81,8 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_GlobalIlluminationMeshLod: 0
-  m_SortingLayerID: 2102671135
-  m_SortingLayer: 3
+  m_SortingLayerID: 1196514981
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7595986285605212588, guid: 405ade58507a2f24495fbc62739dbd43, type: 3}
@@ -116,6 +116,7 @@ MonoBehaviour:
   interactableLayer:
     serializedVersion: 2
     m_Bits: 4294967295
+  farmInteractionController: {fileID: 0}
   inventoryCapacity: 9
 --- !u!95 &8683653121792376415
 Animator:
