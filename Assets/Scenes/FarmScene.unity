@@ -19212,7 +19212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e12df87248a040debec64d5507a94b6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Game.Runtime::Tycoon.Farm.FarmInteractionController
-  farmGridController: {fileID: 1407744506}
+  farmTileControl: {fileID: 1407744506}
   targetPlayer: {fileID: 1282973958}
   hotbarControl: {fileID: 756581173}
   inventoryUIController: {fileID: 756581172}
@@ -19526,7 +19526,7 @@ GameObject:
   - component: {fileID: 1407744507}
   - component: {fileID: 1407744506}
   m_Layer: 0
-  m_Name: FarmGrid
+  m_Name: FarmTileMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19543,7 +19543,7 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5dd2236e35fc4c829b65b75bf661a309, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Game.Runtime::Tycoon.Farm.FarmGridController
+  m_EditorClassIdentifier: Game.Runtime::Tycoon.Farm.FarmTileControl
   width: 16
   height: 16
   originCell: {x: -8, y: -8}
