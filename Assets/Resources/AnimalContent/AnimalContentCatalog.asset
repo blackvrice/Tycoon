@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2a9312c762864634a02b26a6cd702451, type: 3}
+  m_Name: AnimalContentCatalog
+  m_EditorClassIdentifier: Game.Runtime::Tycoon.Animals.AnimalContentCatalog
+  animals:
+  - {fileID: 11400000, guid: 2ce08078863a4db8a9fc9214deccdec9, type: 2}
+  - {fileID: 11400000, guid: d9582063118a4f45aede71f73bb44a0d, type: 2}
+  shopItems:
+  - item: {fileID: 11400000, guid: e7c0482ac8fe460e875ed728314faefc, type: 2}
+    buyPrice: 40
+    sellPrice: 20
+    isUnlocked: 1
+  - item: {fileID: 11400000, guid: 235750ed90d549e1a62e459bf8bbc386, type: 2}
+    buyPrice: 90
+    sellPrice: 45
+    isUnlocked: 1

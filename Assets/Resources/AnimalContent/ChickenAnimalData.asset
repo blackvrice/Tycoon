@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b18e7002a1a4b7ba741bbec2294e5ab, type: 3}
+  m_Name: ChickenAnimalData
+  m_EditorClassIdentifier: Game.Runtime::Tycoon.Animals.AnimalData
+  animalId: chicken
+  animalName: Chicken
+  animalItem: {fileID: 11400000, guid: e7c0482ac8fe460e875ed728314faefc, type: 2}
+  productItem: {fileID: 11400000, guid: 01a377d958ac44d2bfa5b2432a63c58a, type: 2}
+  productAmount: 1
+  productionTicks: 24
+  sprite: {fileID: 8560451000399327191, guid: aa187586b33c6e24cb5a7ea55dd5eab2, type: 3}
