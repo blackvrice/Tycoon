@@ -18,4 +18,4 @@ MonoBehaviour:
   maxStack: 99
   buyPrice: 0
   sellPrice: 3
-  icon: {fileID: 8549692267302808760, guid: 08b5aa119edb8d5449cfa336c91018a4, type: 3}
+  icon: {fileID: 4316263851388221616, guid: b8fea5ac3540ac3449f4944053886a4d, type: 3}
