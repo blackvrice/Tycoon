@@ -19,3 +19,8 @@ MonoBehaviour:
   productAmount: 1
   productionTicks: 48
   sprite: {fileID: -5922754114360663000, guid: b4c954fd2f6ccb544b202fcfcb32cb6d, type: 3}
+  moveSprites:
+  - {fileID: -5922754114360663000, guid: b4c954fd2f6ccb544b202fcfcb32cb6d, type: 3}
+  - {fileID: -1589296601377610331, guid: b4c954fd2f6ccb544b202fcfcb32cb6d, type: 3}
+  - {fileID: 1201215636998452967, guid: b4c954fd2f6ccb544b202fcfcb32cb6d, type: 3}
+  moveFramesPerSecond: 6
