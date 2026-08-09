@@ -530,3 +530,10 @@ PlayMode test-run: Passed, total 33, passed 33, failed 0, skipped 0.
 
 다음 작업 하나만 고르면, `실제 Unity Editor 화면 QA`가 좋습니다.
 한국어 문구가 들어가면서 일부 버튼과 라벨 길이가 달라졌으니, Farm/Main 씬 Play Mode에서 HUD/상점/설정/인벤토리 겹침과 실제 조작감을 눈으로 확인하는 단계가 좋습니다.
+
+## 2026-08-09 지역 상인 중심 Scene 구성
+
+- 독립 `MarketplaceScene`은 프로젝트와 Build Settings에서 제거했습니다.
+- Main 길의 기존 상점 방향은 `PastureScene`으로 연결합니다.
+- 예전 저장 데이터가 `MarketplaceScene`을 가리키면 `SceneFlowManager`가 `PastureScene`으로 치환합니다.
+- 상점 기능은 Main, Farm, Pasture, Livestock에 배치되는 지역 상인이 담당합니다.

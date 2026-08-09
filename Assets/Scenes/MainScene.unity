@@ -341,7 +341,7 @@ MonoBehaviour:
   worldGrid: {fileID: 0}
   leftExitX: -24
   rightExitX: 25
-  leftSceneName: MarketplaceScene
+  leftSceneName: PastureScene
   rightSceneName: FarmScene
   useWorldGridBounds: 1
   worldGridExitInset: 15
@@ -908,7 +908,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game.Runtime::Tycoon.Core.SceneFlowManager
   lobbySceneName: LobbyScene
   farmSceneName: FarmScene
-  marketplaceSceneName: MarketplaceScene
   mainSceneName: MainScene
   pastureSceneName: PastureScene
   livestockSceneName: LivestockScene

@@ -21682,7 +21682,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Game.Runtime::Tycoon.Core.SceneFlowManager
   lobbySceneName: LobbyScene
   farmSceneName: FarmScene
-  marketplaceSceneName: MarketplaceScene
   mainSceneName: MainScene
   saveBeforeLeavingGameplayScene: 1
 --- !u!1 &1873926191
