@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69e7c84f23ee41df99e2224bc5aad00b, type: 3}
+  m_Name: DefaultGameAudioLibrary
+  m_EditorClassIdentifier: Game.Runtime::Tycoon.Core.GameAudioLibrary
+  sfxClips:
+  - type: 1
+    clip: {fileID: 8300000, guid: 9ffb2d99c52db70498ca31496c06aa58, type: 3}
+  - type: 2
+    clip: {fileID: 8300000, guid: 82315526a95b5d04db5904668e5e9351, type: 3}
+  - type: 3
+    clip: {fileID: 8300000, guid: 4e5269d4adf42bc4687ce32f4ca965af, type: 3}
+  - type: 4
+    clip: {fileID: 8300000, guid: b9fc7a29e3b2b614f87705fc90c29b62, type: 3}
+  - type: 5
+    clip: {fileID: 8300000, guid: 89470a4347b709d46b56c825389c8fd3, type: 3}
+  footstepClips:
+  - {fileID: 8300000, guid: edf281f42e1082348a39960604ba95d5, type: 3}
+  - {fileID: 8300000, guid: 8945aa6d39e0e184494d6cad8f9661e8, type: 3}
