@@ -4,12 +4,12 @@
         <ui:VisualElement class="top-bar">
             <ui:Label text="Tycoon Farm" class="game-title"/>
             <ui:Label name="GoldLabel" text="골드: 0 G" class="gold-label"/>
+            <ui:Button name="CloseAllButton" text="닫기" class="icon-button"/>
         </ui:VisualElement>
         <ui:VisualElement class="main-layout">
             <ui:VisualElement name="InventoryPanel" class="panel inventory-panel hidden">
                 <ui:VisualElement class="panel-header">
                     <ui:Label text="인벤토리" class="panel-title"/>
-                    <ui:Button name="InventoryCloseButton" text="X" class="icon-button"/>
                 </ui:VisualElement>
                 <ui:Label text="보유 아이템" class="section-label"/>
                 <ui:ScrollView class="inventory-scroll">
@@ -24,7 +24,6 @@
             <ui:VisualElement name="ShopPanel" class="panel shop-panel hidden">
                 <ui:VisualElement class="panel-header">
                     <ui:Label text="상점" class="panel-title"/>
-                    <ui:Button name="ShopCloseButton" text="X" class="icon-button"/>
                 </ui:VisualElement>
                 <ui:Label text="판매 상품" class="section-label"/>
                 <ui:VisualElement class="shop-control-row">

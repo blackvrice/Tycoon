@@ -1,0 +1,166 @@
+.gameplay-hud-root {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    color: rgb(240, 243, 247);
+}
+
+.status-card {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    width: 290px;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border-width: 1px;
+    border-color: rgba(115, 128, 148, 0.55);
+    background-color: rgba(24, 28, 35, 0.90);
+}
+
+.status-row {
+    min-height: 24px;
+    flex-direction: row;
+    align-items: center;
+}
+
+.status-primary {
+    margin-right: 12px;
+    color: rgb(248, 250, 252);
+    font-size: 16px;
+    -unity-font-style: bold;
+}
+
+.status-secondary {
+    flex-grow: 1;
+    color: rgb(153, 164, 181);
+    font-size: 12px;
+    -unity-text-align: middle-right;
+}
+
+.gold-label {
+    margin-top: 8px;
+    color: rgb(255, 214, 102);
+    font-size: 18px;
+    -unity-font-style: bold;
+}
+
+.selection-label {
+    margin-top: 6px;
+    color: rgb(213, 220, 231);
+    font-size: 13px;
+    white-space: normal;
+}
+
+.context-label {
+    margin-top: 3px;
+    color: rgb(164, 176, 194);
+    font-size: 12px;
+    white-space: normal;
+}
+
+.guide-panel {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 360px;
+    max-width: 34%;
+    padding: 14px 16px;
+    border-radius: 14px;
+    border-width: 2px;
+    border-color: rgb(246, 190, 86);
+    background-color: rgba(37, 42, 50, 0.95);
+}
+
+.guide-header {
+    min-height: 28px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.guide-step {
+    color: rgb(255, 218, 129);
+    font-size: 15px;
+    -unity-font-style: bold;
+}
+
+.guide-skip-button {
+    min-width: 78px;
+    height: 28px;
+    padding-left: 9px;
+    padding-right: 9px;
+    border-radius: 8px;
+    background-color: rgb(58, 65, 78);
+    color: rgb(206, 214, 226);
+    font-size: 11px;
+}
+
+.guide-skip-button:hover {
+    background-color: rgb(75, 84, 100);
+}
+
+.guide-instruction {
+    margin-top: 9px;
+    color: rgb(242, 245, 249);
+    font-size: 14px;
+    white-space: normal;
+}
+
+.action-message-panel {
+    position: absolute;
+    left: 32%;
+    right: 32%;
+    top: 164px;
+    min-height: 44px;
+    padding: 10px 16px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background-color: rgba(24, 28, 35, 0.94);
+}
+
+.action-message {
+    color: rgb(255, 224, 145);
+    font-size: 16px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.interaction-panel {
+    position: absolute;
+    left: 28%;
+    right: 28%;
+    bottom: 116px;
+    min-height: 38px;
+    padding: 8px 14px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background-color: rgba(24, 28, 35, 0.90);
+}
+
+.interaction-label {
+    color: rgb(236, 241, 248);
+    font-size: 14px;
+    -unity-font-style: bold;
+    -unity-text-align: middle-center;
+    white-space: normal;
+}
+
+.shortcut-hint {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    padding: 7px 11px;
+    border-radius: 9px;
+    background-color: rgba(24, 28, 35, 0.78);
+    color: rgb(172, 183, 199);
+    font-size: 11px;
+}
+
+.hidden {
+    display: none;
+}

@@ -46,6 +46,7 @@
             </ui:VisualElement>
             <ui:VisualElement class="setting-actions">
                 <ui:Button name="ResetSettingsButton" text="초기화" class="secondary-button"/>
+                <ui:Button name="QuitGameButton" text="게임 종료" class="danger-button"/>
                 <ui:Button name="ResumeButton" text="돌아가기" class="primary-button"/>
             </ui:VisualElement>
         </ui:VisualElement>

@@ -133,7 +133,7 @@ MonoBehaviour:
   m_PanelSettings: {fileID: 11400000, guid: 49ea3e9ebe7faf448ad23d49ffb113dd, type: 2}
   m_ParentUI: {fileID: 0}
   sourceAsset: {fileID: 9197481963319205126, guid: 55663ebede86e484bac2e6369a097d77, type: 3}
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Position: 0
   m_WorldSpaceSizeMode: 1
   m_WorldSpaceWidth: 1920
@@ -374,3 +374,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Game.Runtime::Tycoon.UI.SettingUIController
   startClosed: 1
+  settingsManager: {fileID: 0}
+  gameManager: {fileID: 0}
+  farmTileControl: {fileID: 0}
+  hotbarControl: {fileID: 0}
+  inventoryUIController: {fileID: 0}
+  inventoryShopUIController: {fileID: 0}

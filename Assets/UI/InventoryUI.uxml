@@ -4,6 +4,7 @@
         <ui:VisualElement name="InventoryWindow" class="inventory-window">
             <ui:VisualElement class="inventory-header">
                 <ui:Label text="인벤토리" class="inventory-title"/>
+                <ui:Label name="GoldLabel" text="골드: 0 G" class="gold-label"/>
                 <ui:Button name="InventoryCloseButton" text="X" class="inventory-close-button"/>
             </ui:VisualElement>
             <ui:VisualElement name="InventoryGrid" class="inventory-grid">
