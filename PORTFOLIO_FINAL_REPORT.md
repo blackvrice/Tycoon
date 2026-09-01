@@ -54,7 +54,7 @@
 - `PortfolioGameplayLoopPlayModeTests.cs` — 실제 FarmScene 코어 루프와 10단계 README GIF 캡처
 - `RuntimePrefabSceneInstallerEditModeTests.cs` — 8 Item/3 Crop/3 seed binding 계약
 - `PortfolioBuildTool.cs` — Windows build 메뉴와 CLI
-- `PortfolioMedia/Tycoon_CoreLoop.gif`와 README, Status, Capture Guide, Final Report — 현재 구현과 검증을 기준으로 제출 자료 갱신
+- `PortfolioMedia/Tycoon_CoreLoop.gif`, 64초 무음 시스템 프리뷰와 README, Status, Capture Guide, Final Report — 현재 구현과 검증을 기준으로 제출 자료 갱신
 
 ## 5. 핵심 클래스 책임
 
@@ -109,6 +109,7 @@ Wheat, Tomato, Sunflower의 ID, 표시 이름, 성장 단계, Tick, 구매가, �
 | Unity PlayMode | 74 passed / 0 failed |
 | Runtime scene reinstall/validation | passed |
 | UI visual capture | 3 resolutions inspected |
+| Silent systems preview | H.264 High, 960×540, 30fps, 64초 전체 decode passed |
 | Windows Standalone build | succeeded, 약 103.4MB |
 | Standalone headless boot | engine/Title input initialized, game code exception 없음 |
 
@@ -162,12 +163,12 @@ Wheat, Tomato, Sunflower의 ID, 표시 이름, 성장 단계, Tick, 구매가, �
 - UI/UX와 시각 피드백: 16/20
 - 문서/빌드/제출 준비: 14/15
 
-감점은 60~90초 Gameplay Video 미첨부, 장시간 수동 조작·오디오 최종 QA, 동물/시설 확장 깊이에서 발생합니다. 실제 FarmScene 코어 루프 GIF와 핵심 코드·테스트·빌드는 제출 가능한 상태입니다.
+감점은 연속 조작·오디오가 포함된 최종 Gameplay Video 미첨부, 장시간 수동 QA, 동물/시설 확장 깊이에서 발생합니다. 실제 FarmScene 코어 루프 GIF, 무음 시스템 프리뷰와 핵심 코드·테스트·빌드는 제출 가능한 상태입니다.
 
 ## 15. 최종 판정과 다음 최소 개선
 
 **Portfolio Ready:** Yes — 핵심 Farm → Sell → Reinvest → Save/Load vertical slice 기준.
 
-**미디어 제출 Ready:** README GIF 완료, 60~90초 Video 촬영·업로드 필요.
+**미디어 제출 Ready:** README GIF와 64초 무음 시스템 프리뷰 완료, 연속 조작·오디오 Video 촬영·업로드 필요.
 
 최소 후속 작업은 3~5분 연속 수동 플레이 1회, 60~90초 영상 촬영과 README Video 링크 교체입니다. 신규 대형 기능보다 현재 장면의 애니메이션 타이밍, SFX 밸런스와 영상 편집 완성도가 점수 상승에 더 직접적입니다.

@@ -69,5 +69,8 @@
 
 - `Tycoon_Gameplay_80s.mp4`: 1080p H.264
 - `PortfolioMedia/Tycoon_CoreLoop.gif`: 완료, 실제 FarmScene 10단계 / 960×540 / 11.15초 / 10MB 이하
+- `PortfolioMedia/Tycoon_CoreSystems_Preview_Silent.mp4`: 완료, 같은 실제 캡처의 64초 H.264 무음 설명 프리뷰
 - 썸네일: 성숙 작물, Player, HUD가 한 프레임에 보이는 Farm 화면
 - README의 `Gameplay Video` placeholder를 실제 업로드 링크로 교체
+
+무음 프리뷰는 시스템 흐름과 편집 순서를 미리 검토하는 러프컷입니다. 최종 `Tycoon_Gameplay_80s.mp4`는 Windows build의 연속 조작, 애니메이션 타이밍과 게임 오디오를 새로 촬영합니다.

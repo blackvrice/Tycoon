@@ -4,7 +4,7 @@
 
 ## Current Status
 
-**Portfolio Ready — 코드, 자동 테스트, Windows 빌드와 README Gameplay GIF까지 준비 완료. 60~90초 영상과 마지막 연속 수동 플레이 QA가 남았습니다.**
+**Portfolio Ready — 코드, 자동 테스트, Windows 빌드, README GIF와 64초 무음 시스템 프리뷰까지 준비 완료. 연속 조작 영상과 마지막 수동 오디오 QA가 남았습니다.**
 
 핵심 3~5분 루프는 `Title → New Game → Main → Farm → Till → Plant → Water → Grow → Harvest → Sell → Buy Seed → Save/Load`로 연결되어 있습니다. 첫 플레이 가이드는 Farm/Inventory/Economy 상태를 관찰하며 7단계를 안내합니다.
 
@@ -41,12 +41,13 @@
 - C# compile 3종 warning 0 / error 0
 - Unity EditMode 4/4, PlayMode 74/74
 - 실제 FarmScene 코어 루프 10단계 캡처와 11.15초 README GIF
+- 같은 캡처를 설명 흐름으로 편집한 64초 H.264 무음 시스템 프리뷰
 - Windows Standalone build 성공: `Builds/Windows/Tycoon.exe`, 약 103.4MB
 - Standalone headless boot에서 Unity 6000.3.10f1과 Title 입력 시스템 초기화 확인
 
 ## Known Issues
 
-- 60~90초 연속 Gameplay Video는 아직 촬영되지 않았습니다.
+- 키보드/마우스 연속 조작과 게임 오디오를 함께 담은 60~90초 Gameplay Video는 아직 촬영되지 않았습니다.
 - 키보드/마우스의 장시간 조작감, 최종 오디오 믹스는 촬영 전 수동 Play Mode 체크가 필요합니다.
 - Headless Standalone 로그에서 Unity 외부 서비스 인증서 경고가 발생할 수 있습니다. 게임 코드 예외나 오프라인 루프 실패는 확인되지 않았습니다.
 
@@ -67,6 +68,7 @@
 - [x] Windows Standalone build
 - [x] README / Status / Final Report / Capture Guide
 - [x] Gameplay GIF 추가
+- [x] 64초 무음 시스템 프리뷰 추가
 - [ ] 60~90초 Gameplay Video 촬영·업로드
 - [ ] 촬영 직전 3~5분 연속 수동 플레이 최종 확인
 
