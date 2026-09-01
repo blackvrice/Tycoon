@@ -51,9 +51,10 @@
 
 - Save/Load, Farm Interaction, Scene Smoke, Scene Catalog, UI Contract, First Guide 테스트 보강
 - `UIResponsiveLayoutPlayModeTests.cs` — 세 해상도 layout, modal visibility, 선택적 PNG 캡처
+- `PortfolioGameplayLoopPlayModeTests.cs` — 실제 FarmScene 코어 루프와 10단계 README GIF 캡처
 - `RuntimePrefabSceneInstallerEditModeTests.cs` — 8 Item/3 Crop/3 seed binding 계약
 - `PortfolioBuildTool.cs` — Windows build 메뉴와 CLI
-- README, Development Status, Capture Guide, Final Report — 현재 구현과 검증을 기준으로 재작성
+- `PortfolioMedia/Tycoon_CoreLoop.gif`와 README, Status, Capture Guide, Final Report — 현재 구현과 검증을 기준으로 제출 자료 갱신
 
 ## 5. 핵심 클래스 책임
 
@@ -94,6 +95,7 @@ Wheat, Tomato, Sunflower의 ID, 표시 이름, 성장 단계, Tick, 구매가, �
 - UI: UXML 계약, 한국어 문구, 설정 버튼, 첫 플레이 guide state machine
 - Responsive UI: 1920×1080, 1600×900, 1280×720 경계와 modal/HUD visibility
 - Scene: Title/Main/Farm/Pasture/Livestock 실제 load와 필수 object 유일성, 카메라/출구/상인/Tilemap
+- Portfolio Loop: 실제 FarmScene에서 경작, 성장, 수확, 거래, 재투자와 Save/Load 복원을 한 시나리오로 검증
 - Editor: installer 설치, 재설치 멱등성, 필수 참조와 3종 작물 데이터
 
 ## 9. 테스트 결과
@@ -104,7 +106,7 @@ Wheat, Tomato, Sunflower의 ID, 표시 이름, 성장 단계, Tick, 구매가, �
 | `dotnet build Assembly-CSharp-Editor.csproj` | warning 0 / error 0 |
 | `dotnet build PlayMode.csproj` | warning 0 / error 0 |
 | Unity EditMode | 4 passed / 0 failed |
-| Unity PlayMode | 73 passed / 0 failed |
+| Unity PlayMode | 74 passed / 0 failed |
 | Runtime scene reinstall/validation | passed |
 | UI visual capture | 3 resolutions inspected |
 | Windows Standalone build | succeeded, 약 103.4MB |
@@ -135,7 +137,7 @@ Wheat, Tomato, Sunflower의 ID, 표시 이름, 성장 단계, Tick, 구매가, �
 2. Farm 규칙, UI 표현, 데이터와 저장 DTO를 분리해 콘텐츠 추가 비용을 낮췄습니다.
 3. Scene/Prefab/ScriptableObject wiring을 Editor tool과 실제 scene smoke로 검증합니다.
 4. Save/Load를 단순 JSON 예제가 아니라 성장 중 상태와 선택 UI까지 round-trip 했습니다.
-5. 73 PlayMode + 4 EditMode, 세 해상도 렌더 QA와 Windows build까지 같은 제출 기준으로 운영합니다.
+5. 74 PlayMode + 4 EditMode, 세 해상도 렌더 QA와 Windows build까지 같은 제출 기준으로 운영합니다.
 
 ## 13. 면접 예상 질문 10개와 코드 위치
 
@@ -152,20 +154,20 @@ Wheat, Tomato, Sunflower의 ID, 표시 이름, 성장 단계, Tick, 구매가, �
 
 ## 14. 포트폴리오 품질 점수
 
-**91 / 100**
+**92 / 100**
 
 - 코드 구조와 핵심 루프: 24/25
 - 데이터/저장 설계: 18/20
 - 자동 테스트와 Editor tooling: 20/20
 - UI/UX와 시각 피드백: 16/20
-- 문서/빌드/제출 준비: 13/15
+- 문서/빌드/제출 준비: 14/15
 
-감점은 실제 Gameplay GIF/Video 미첨부, 장시간 수동 조작·오디오 최종 QA, 동물/시설 확장 깊이에서 발생합니다. 핵심 Farm vertical slice의 코드·테스트·빌드는 제출 가능한 상태입니다.
+감점은 60~90초 Gameplay Video 미첨부, 장시간 수동 조작·오디오 최종 QA, 동물/시설 확장 깊이에서 발생합니다. 실제 FarmScene 코어 루프 GIF와 핵심 코드·테스트·빌드는 제출 가능한 상태입니다.
 
 ## 15. 최종 판정과 다음 최소 개선
 
 **Portfolio Ready:** Yes — 핵심 Farm → Sell → Reinvest → Save/Load vertical slice 기준.
 
-**미디어 제출 Ready:** 촬영 문서 기준 준비 완료, 실제 GIF/Video 파일 추가 필요.
+**미디어 제출 Ready:** README GIF 완료, 60~90초 Video 촬영·업로드 필요.
 
-최소 후속 작업은 3~5분 연속 수동 플레이 1회, 60~90초 영상 촬영, README 링크 교체입니다. 신규 대형 기능보다 현재 장면의 애니메이션 타이밍, SFX 밸런스와 영상 편집 완성도가 점수 상승에 더 직접적입니다.
+최소 후속 작업은 3~5분 연속 수동 플레이 1회, 60~90초 영상 촬영과 README Video 링크 교체입니다. 신규 대형 기능보다 현재 장면의 애니메이션 타이밍, SFX 밸런스와 영상 편집 완성도가 점수 상승에 더 직접적입니다.

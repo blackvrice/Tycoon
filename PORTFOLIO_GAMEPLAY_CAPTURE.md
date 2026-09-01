@@ -39,7 +39,7 @@
 - `Domain State: Till → Plant → Water → Grow`
 - `Harvest → Sell → Reinvest`
 - `Composite Save / Load`
-- `73 PlayMode + 4 EditMode Tests`
+- `74 PlayMode + 4 EditMode Tests`
 
 각 캡션은 2~3초만 표시하고 코드 용어보다 플레이 결과를 먼저 보여줍니다.
 
@@ -68,6 +68,6 @@
 ## Upload Package
 
 - `Tycoon_Gameplay_80s.mp4`: 1080p H.264
-- `Tycoon_CoreLoop.gif`: README용 8~12초, 15~20fps, 10MB 이하 권장
+- `PortfolioMedia/Tycoon_CoreLoop.gif`: 완료, 실제 FarmScene 10단계 / 960×540 / 11.15초 / 10MB 이하
 - 썸네일: 성숙 작물, Player, HUD가 한 프레임에 보이는 Farm 화면
-- README의 `Gameplay GIF`와 `Gameplay Video` placeholder를 실제 링크로 교체
+- README의 `Gameplay Video` placeholder를 실제 업로드 링크로 교체

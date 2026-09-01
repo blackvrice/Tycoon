@@ -4,7 +4,7 @@
 
 ## Current Status
 
-**Portfolio Ready — 코드, 자동 테스트, Windows 빌드 기준 준비 완료. Gameplay GIF/Video 파일만 촬영 후 README에 추가하면 됩니다.**
+**Portfolio Ready — 코드, 자동 테스트, Windows 빌드와 README Gameplay GIF까지 준비 완료. 60~90초 영상과 마지막 연속 수동 플레이 QA가 남았습니다.**
 
 핵심 3~5분 루프는 `Title → New Game → Main → Farm → Till → Plant → Water → Grow → Harvest → Sell → Buy Seed → Save/Load`로 연결되어 있습니다. 첫 플레이 가이드는 Farm/Inventory/Economy 상태를 관찰하며 7단계를 안내합니다.
 
@@ -39,13 +39,14 @@
 - Farm scene setup 도구의 Unity 6 Tile 경로와 3종 작물 wiring
 - Windows Portfolio Build 메뉴/CLI
 - C# compile 3종 warning 0 / error 0
-- Unity EditMode 4/4, PlayMode 73/73
+- Unity EditMode 4/4, PlayMode 74/74
+- 실제 FarmScene 코어 루프 10단계 캡처와 11.15초 README GIF
 - Windows Standalone build 성공: `Builds/Windows/Tycoon.exe`, 약 103.4MB
 - Standalone headless boot에서 Unity 6000.3.10f1과 Title 입력 시스템 초기화 확인
 
 ## Known Issues
 
-- Gameplay GIF와 60~90초 영상 파일은 아직 촬영되지 않았습니다.
+- 60~90초 연속 Gameplay Video는 아직 촬영되지 않았습니다.
 - 키보드/마우스의 장시간 조작감, 최종 오디오 믹스는 촬영 전 수동 Play Mode 체크가 필요합니다.
 - Headless Standalone 로그에서 Unity 외부 서비스 인증서 경고가 발생할 수 있습니다. 게임 코드 예외나 오프라인 루프 실패는 확인되지 않았습니다.
 
@@ -65,13 +66,12 @@
 - [x] 3개 대표 해상도 UI 렌더 QA
 - [x] Windows Standalone build
 - [x] README / Status / Final Report / Capture Guide
-- [ ] Gameplay GIF 추가
+- [x] Gameplay GIF 추가
 - [ ] 60~90초 Gameplay Video 촬영·업로드
 - [ ] 촬영 직전 3~5분 연속 수동 플레이 최종 확인
 
 ## Next Minimum Actions
 
-1. [PORTFOLIO_GAMEPLAY_CAPTURE.md](PORTFOLIO_GAMEPLAY_CAPTURE.md)의 프리플라이트를 수행합니다.
-2. 3~5분 연속 플레이를 한 번 완료하고 Save/Load 전후 상태를 눈으로 확인합니다.
-3. 같은 실행에서 60~90초 분량을 촬영·편집합니다.
-4. README의 GIF/Video placeholder를 실제 링크로 교체합니다.
+1. [PORTFOLIO_GAMEPLAY_CAPTURE.md](PORTFOLIO_GAMEPLAY_CAPTURE.md)의 영상 프리플라이트를 수행합니다.
+2. 3~5분 연속 플레이를 한 번 완료하고 Save/Load 전후 상태와 오디오를 눈과 귀로 확인합니다.
+3. 같은 실행에서 60~90초 분량을 촬영·편집하고 README의 Video placeholder를 교체합니다.

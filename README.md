@@ -2,11 +2,13 @@
 
 Unity 6와 C#으로 제작한 싱글 플레이 농장 경영 Vertical Slice입니다. 밭 상태, 작물 성장, 인벤토리, 상점 경제, 씬 전환과 저장/복원을 하나의 3~5분 플레이 루프로 연결했습니다.
 
-**Gameplay GIF:** To be added · **Gameplay Video:** To be added
+![Tycoon core gameplay loop](PortfolioMedia/Tycoon_CoreLoop.gif)
+
+**Gameplay GIF:** 실제 FarmScene의 경작 → 성장 → 수확 → 판매 → 재투자 → Save/Load · **Gameplay Video:** To be added
 
 | 개발 | Engine | Language | 핵심 기술 | 최신 검증 |
 |---|---|---|---|---|
-| 개인 프로젝트 / 1인 개발 | Unity `6000.3.10f1` | C# | Domain State · ScriptableObject · Save/Load · UI Toolkit | EditMode 4/4 · PlayMode 73/73 · Windows Build |
+| 개인 프로젝트 / 1인 개발 | Unity `6000.3.10f1` | C# | Domain State · ScriptableObject · Save/Load · UI Toolkit | EditMode 4/4 · PlayMode 74/74 · Windows Build |
 
 ## Overview
 
@@ -88,11 +90,12 @@ Load는 ScriptableObject 자체를 직렬화하지 않고 Item/Crop ID로 `GameD
 2026-09-01 Unity Test Runner 결과:
 
 - **EditMode 4/4** — Runtime installer의 설치, 재설치 멱등성, 참조/데이터 계약
-- **PlayMode 73/73** — Farm 규칙, Inventory/Shop/Economy, Save/Load/New Game, UI, 씬 이동과 5개 실제 씬 smoke
+- **PlayMode 74/74** — Farm 규칙, Inventory/Shop/Economy, Save/Load/New Game, UI, 씬 이동, 5개 실제 씬 smoke와 FarmScene 코어 루프
 - **Responsive UI** — 1920×1080, 1600×900, 1280×720 UI Toolkit 렌더 타깃에서 HUD/상점/설정 경계와 모달 겹침 검증
 - **C# compile** — `Game.Runtime`, `Assembly-CSharp-Editor`, `PlayMode` 모두 warning 0 / error 0
 
 테스트는 테스트 전용 대체 구현이 아니라 실제 `FarmGrid`, `Inventory`, `ShopSystem`, `SaveManager`와 프로젝트 씬을 사용합니다.
+README GIF도 같은 FarmScene 코어 루프 테스트에서 10개 실제 런타임 상태를 960×540으로 캡처해 구성했습니다.
 
 ## Editor Tools
 
@@ -155,7 +158,7 @@ Windows 실행 파일은 Unity 메뉴 `Tycoon/Build/Build Windows Portfolio`로 
 
 - `Assets/Scripts/Network`는 플레이 루프에 연결되지 않은 실험 초안이며 완성 기능으로 주장하지 않습니다.
 - Pasture/Livestock의 동물·시설은 보조 확장 콘텐츠입니다. 포트폴리오 핵심 평가는 Farm → Sell → Reinvest → Save/Load 루프입니다.
-- 실제 Gameplay GIF/Video 파일은 촬영 전이며, 촬영 순서와 체크리스트는 [PORTFOLIO_GAMEPLAY_CAPTURE.md](PORTFOLIO_GAMEPLAY_CAPTURE.md)에 정리했습니다.
+- 60~90초 Gameplay Video와 연속 수동 조작·오디오 최종 QA는 아직 촬영 전이며, 순서와 체크리스트는 [PORTFOLIO_GAMEPLAY_CAPTURE.md](PORTFOLIO_GAMEPLAY_CAPTURE.md)에 정리했습니다.
 
 ## Documentation
 
