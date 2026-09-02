@@ -6,7 +6,9 @@ Unity 6와 C#으로 제작한 싱글 플레이 농장 경영 Vertical Slice입�
 
 **Gameplay GIF:** 실제 FarmScene의 경작 → 성장 → 수확 → 판매 → 재투자 → Save/Load
 
-**Gameplay Video:** [YouTube에서 보기](https://youtu.be/VSVncw0xsNU) · **Silent Systems Preview:** [64초 H.264 MP4](PortfolioMedia/Tycoon_CoreSystems_Preview_Silent.mp4)
+[![Tycoon | Unity 6 Gameplay Demo](https://img.youtube.com/vi/VSVncw0xsNU/maxresdefault.jpg)](https://youtu.be/VSVncw0xsNU)
+
+**Gameplay Video:** 썸네일을 클릭하면 YouTube에서 재생됩니다. · **Silent Systems Preview:** [64초 H.264 MP4](PortfolioMedia/Tycoon_CoreSystems_Preview_Silent.mp4)
 
 무음 프리뷰는 실제 FarmScene PlayMode 캡처를 64초 시스템 설명 흐름으로 편집한 보조 자료이며, 위 Gameplay Video에서 최종 플레이 흐름을 확인할 수 있습니다.
 
