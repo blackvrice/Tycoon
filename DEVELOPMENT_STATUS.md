@@ -4,7 +4,7 @@
 
 ## Current Status
 
-**Portfolio Ready — 코드, 자동 테스트, Windows 빌드, README GIF와 64초 무음 시스템 프리뷰까지 준비 완료. 연속 조작 영상과 마지막 수동 오디오 QA가 남았습니다.**
+**Portfolio Ready — 코드, 자동 테스트, Windows 빌드, README GIF, 64초 무음 시스템 프리뷰와 최종 Gameplay Video까지 준비 완료.**
 
 핵심 3~5분 루프는 `Title → New Game → Main → Farm → Till → Plant → Water → Grow → Harvest → Sell → Buy Seed → Save/Load`로 연결되어 있습니다. 첫 플레이 가이드는 Farm/Inventory/Economy 상태를 관찰하며 7단계를 안내합니다.
 
@@ -47,8 +47,6 @@
 
 ## Known Issues
 
-- 키보드/마우스 연속 조작과 게임 오디오를 함께 담은 60~90초 Gameplay Video는 아직 촬영되지 않았습니다.
-- 키보드/마우스의 장시간 조작감, 최종 오디오 믹스는 촬영 전 수동 Play Mode 체크가 필요합니다.
 - Headless Standalone 로그에서 Unity 외부 서비스 인증서 경고가 발생할 수 있습니다. 게임 코드 예외나 오프라인 루프 실패는 확인되지 않았습니다.
 
 ## Deferred / Out of Scope
@@ -66,14 +64,7 @@
 - [x] 5개 Build Settings Scene smoke
 - [x] 3개 대표 해상도 UI 렌더 QA
 - [x] Windows Standalone build
-- [x] README / Status / Final Report / Capture Guide
+- [x] README / Status
 - [x] Gameplay GIF 추가
 - [x] 64초 무음 시스템 프리뷰 추가
-- [ ] 60~90초 Gameplay Video 촬영·업로드
-- [ ] 촬영 직전 3~5분 연속 수동 플레이 최종 확인
-
-## Next Minimum Actions
-
-1. [PORTFOLIO_GAMEPLAY_CAPTURE.md](PORTFOLIO_GAMEPLAY_CAPTURE.md)의 영상 프리플라이트를 수행합니다.
-2. 3~5분 연속 플레이를 한 번 완료하고 Save/Load 전후 상태와 오디오를 눈과 귀로 확인합니다.
-3. 같은 실행에서 60~90초 분량을 촬영·편집하고 README의 Video placeholder를 교체합니다.
+- [x] Gameplay Video 촬영·업로드 및 README 링크 반영

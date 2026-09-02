@@ -162,10 +162,8 @@ Windows 실행 파일은 Unity 메뉴 `Tycoon/Build/Build Windows Portfolio`로 
 
 - `Assets/Scripts/Network`는 플레이 루프에 연결되지 않은 실험 초안이며 완성 기능으로 주장하지 않습니다.
 - Pasture/Livestock의 동물·시설은 보조 확장 콘텐츠입니다. 포트폴리오 핵심 평가는 Farm → Sell → Reinvest → Save/Load 루프입니다.
-- 최종 Gameplay Video는 [YouTube](https://youtu.be/VSVncw0xsNU)에 공개했으며, 촬영 구성과 QA 체크리스트는 [PORTFOLIO_GAMEPLAY_CAPTURE.md](PORTFOLIO_GAMEPLAY_CAPTURE.md)에 정리했습니다.
+- 최종 Gameplay Video는 [YouTube](https://youtu.be/VSVncw0xsNU)에 공개했습니다.
 
 ## Documentation
 
 - [Development Status](DEVELOPMENT_STATUS.md)
-- [Gameplay Capture Guide](PORTFOLIO_GAMEPLAY_CAPTURE.md)
-- [Portfolio Final Report](PORTFOLIO_FINAL_REPORT.md)
