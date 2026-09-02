@@ -6,9 +6,9 @@ Unity 6와 C#으로 제작한 싱글 플레이 농장 경영 Vertical Slice입�
 
 **Gameplay GIF:** 실제 FarmScene의 경작 → 성장 → 수확 → 판매 → 재투자 → Save/Load
 
-**Silent Systems Preview:** [64초 H.264 MP4](PortfolioMedia/Tycoon_CoreSystems_Preview_Silent.mp4) · **Continuous Gameplay Video:** To be added
+**Gameplay Video:** [YouTube에서 보기](https://youtu.be/VSVncw0xsNU) · **Silent Systems Preview:** [64초 H.264 MP4](PortfolioMedia/Tycoon_CoreSystems_Preview_Silent.mp4)
 
-무음 프리뷰는 실제 FarmScene PlayMode 캡처를 64초 시스템 설명 흐름으로 편집한 자료이며, 연속 키보드/마우스 조작과 최종 오디오 QA를 대체하지 않습니다.
+무음 프리뷰는 실제 FarmScene PlayMode 캡처를 64초 시스템 설명 흐름으로 편집한 보조 자료이며, 위 Gameplay Video에서 최종 플레이 흐름을 확인할 수 있습니다.
 
 | 개발 | Engine | Language | 핵심 기술 | 최신 검증 |
 |---|---|---|---|---|
@@ -162,7 +162,7 @@ Windows 실행 파일은 Unity 메뉴 `Tycoon/Build/Build Windows Portfolio`로 
 
 - `Assets/Scripts/Network`는 플레이 루프에 연결되지 않은 실험 초안이며 완성 기능으로 주장하지 않습니다.
 - Pasture/Livestock의 동물·시설은 보조 확장 콘텐츠입니다. 포트폴리오 핵심 평가는 Farm → Sell → Reinvest → Save/Load 루프입니다.
-- 60~90초 Gameplay Video와 연속 수동 조작·오디오 최종 QA는 아직 촬영 전이며, 순서와 체크리스트는 [PORTFOLIO_GAMEPLAY_CAPTURE.md](PORTFOLIO_GAMEPLAY_CAPTURE.md)에 정리했습니다.
+- 최종 Gameplay Video는 [YouTube](https://youtu.be/VSVncw0xsNU)에 공개했으며, 촬영 구성과 QA 체크리스트는 [PORTFOLIO_GAMEPLAY_CAPTURE.md](PORTFOLIO_GAMEPLAY_CAPTURE.md)에 정리했습니다.
 
 ## Documentation
 
